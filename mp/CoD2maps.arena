@@ -1,0 +1,90 @@
+{
+	map			"mp_farmhouse"
+	longname	"Beltot, France"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_brecourt"
+	longname	"Brecourt, France"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_burgundy"
+	longname	"Burgundy, France"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_trainstation"
+	longname	"Caen, France"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_carentan"
+	longname	"Carentan, France"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_decoy"
+	longname	"El Alamein, Egypt"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_leningrad"
+	longname	"Leningrad, Russia"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_matmata"
+	longname	"Matmata, Tunisia"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_downtown"
+	longname	"Moscow, Russia"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_harbor"
+	longname	"Rostov, Russia"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_dawnville"
+	longname	"St. Mere Eglise, France"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_railyard"
+	longname	"Stalingrad, Russia"
+	gametype	"dm lms ihtf tdm hq sd re ctf lts htf vip ehq esd ctfb ectf"
+}
+
+{
+	map			"mp_toujane"
+	longname	"Toujane, Tunisia"
+	gametype	"dm lms ihtf tdm hq sd re ctf lts htf vip ehq esd ctfb ectf"
+}
+
+{
+	map			"mp_breakout"
+	longname	"Villers-Bocage, France"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
+{
+	map			"mp_rhine"
+	longname	"Wallendar, Germany"
+	gametype	"ctf dm hq sd tdm bt cnq ctfb dom ectf ehq esd hm htf ihtf lms lts ons re vip"
+}
+
