@@ -952,8 +952,8 @@ startRound()
 	level.clock.y = 2;
 	level.clock.font = "default";
 	level.clock.fontscale = 2;
-	//level.clock setTimer(level.roundlength * 60);
-	level.clock setTimer(level.graceperiod);
+	level.clock setTimer(level.roundlength * 60); 
+	//level.clock setTimer(level.graceperiod); //Sh0k -
 
 	
 
@@ -1024,12 +1024,15 @@ checkRoundTimeLimit(timer)
 
 	if(!level.exist[game["attackers"]] || !level.exist[game["defenders"]])
 	{	
-		wait 1 * level.ec_fpsMultiplier; //because the text pops up too early for some reason
+		//because the text pops up too early for some reason
+		wait 1 * level.ec_fpsMultiplier; // Sh0k' +
 		iprintln(&"MP_TIMEHASEXPIRED");
 		level thread endRound("draw");
 		return;
 	}
-	wait 8;
+	
+	//Dont know what the purpose of this wait is
+	//wait 8; // Sh0k' -
 	iprintln(&"MP_TIMEHASEXPIRED");
 	level thread endRound(game["defenders"]);
 }
