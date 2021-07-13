@@ -1131,6 +1131,10 @@ endRound(roundwinner)
 		game["alliedscore"]++;
 		setTeamScore("allies", game["alliedscore"]);
 
+		//Sh0k' >>
+		level thread maps\mp\gametypes\_hud_teamscore::updateAllHUD();
+		//Sh0k' <<
+
 		players = getentarray("player", "classname");
 		for(i = 0; i < players.size; i++)
 		{
@@ -1147,6 +1151,10 @@ endRound(roundwinner)
 	{
 		game["axisscore"]++;
 		setTeamScore("axis", game["axisscore"]);
+
+		//Sh0k' >>
+		level thread maps\mp\gametypes\_hud_teamscore::updateAllHUD();
+		//Sh0k' <<
 
 		players = getentarray("player", "classname");
 		for(i = 0; i < players.size; i++)
