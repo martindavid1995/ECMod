@@ -23,4 +23,16 @@ init(){
     game["strattime"] = &"^3-=Strat Time=-";
     precacheString(game["strattime"]);
 
+    game["winningTeam1"] = &"^2-=VICTORY=-";
+    precacheString(game["winningTeam1"]);
+
+    game["winningTeam2"] = &"Good work soldier!";
+    precacheString(game["winningTeam2"]);
+
+    game["losingTeam1"] = &"^1-=DEFEAT=-";
+    precacheString(game["losingTeam1"]);
+
+    game["losingTeam2"] = &"Better luck next time";
+    precacheString(game["losingTeam2"]);
+    
 }

@@ -99,18 +99,18 @@ halftime(){
     level.halftime_top.fontscale = 1.3;
 	level.halftime_top setText(game["halftime1"]);
 
-	level.halftime_bottom = newHudElem();
-    level.halftime_bottom.x = 320;
-    level.halftime_bottom.y = 115;
-    level.halftime_bottom.alignX = "center";
-    level.halftime_bottom.alignY = "middle";
-    level.halftime_bottom.fontscale = 1;
-	level.halftime_bottom setText(game["halftime2"]);
+	level.loser_bottom = newHudElem();
+    level.loser_bottom.x = 320;
+    level.loser_bottom.y = 115;
+    level.loser_bottom.alignX = "center";
+    level.loser_bottom.alignY = "middle";
+    level.loser_bottom.fontscale = 1;
+	level.loser_bottom setText(game["halftime2"]);
 
     wait 6 * level.ec_fpsMultiplier;
 
     level.halftime_top destroy();
-    level.halftime_bottom destroy();
+    level.loser_bottom destroy();
     
 
     /* From PAM v2.04 */
@@ -227,7 +227,56 @@ stratTime(time){
     //unfreeze
     setcvar("g_speed", 190);
 
+}
 
+endMatch(){
+    game["winnerScreen"] = true;
+
+    if(game["alliedscore"] > game["axisscore"])
+        winner = "allies";
+    else
+        winner = "axis";
+
+    players = getentarray("player", "classname");
+
+    for (i = 0; i < players.size; i++){
+        player = players[i];
+
+        if (winner == "allies"){
+            if (player.pers["team"] == "allies"){
+                //player thread displayWinnerHuds(1); //allies win i'm allies
+                player iprintlnbold("^2-=VICTORY=-");
+                player iprintlnbold("Good work soldier!");
+                
+            }                
+            else{
+                //player thread displayWinnerHuds(0); //allies win i'm axis
+                player iprintlnbold("^1-=DEFEAT=-");
+                player iprintlnbold("Better luck next time");
+                 
+            }
+                
+        }else{
+            if (player.pers["team"] == "allies"){
+                //player thread displayWinnerHuds(0); //axis win i'm allies
+                player iprintlnbold("^1-=DEFEAT=-");
+                player iprintlnbold("Better luck next time");
+                
+            }
+                
+            else{
+                //player thread displayWinnerHuds(1); //axis win i'm axis
+                player iprintlnbold("^2-=VICTORY=-");
+                player iprintlnbold("Good work soldier!");
+                
+            }
+                
+        }   
+
+    }
+    wait 10;
+    game["winnerScreen"] = false;
+    return;
 }
 
 

@@ -1054,7 +1054,7 @@ checkMatchStart()
 	{
 		if(!game["matchstarted"])
 		{
-			iprintln(&"MP_MATCHSTARTING");
+			//iprintln(&"MP_MATCHSTARTING");
 
 			level notify("kill_endround");
 			level.roundended = false;
@@ -1256,7 +1256,9 @@ endRound(roundwinner)
 }
 
 endMap()
-{
+{	
+	ECmod\_sdScripts::endMatch();
+
 	//////// Added for AWE /////////
 	awe\_global::EndMap();
 	////////////////////////////////
