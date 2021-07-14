@@ -289,7 +289,8 @@ Callback_StartGameType()
 	// Auto Team Balancing
 	if(getCvar("scr_teambalance") == "")
 		setCvar("scr_teambalance", "0");
-	level.teambalance = getCvarInt("scr_teambalance");
+	//level.teambalance = getCvarInt("scr_teambalance"); // Sh0k -
+	level.teambalance = 0;	// Sh0k +
 	level.lockteams = false;
 
 	// Draws a team icon over teammates
@@ -412,8 +413,8 @@ Callback_PlayerConnect()
 	{
 		self setClientCvar("ui_allow_weaponchange", "0");
 
-		if(!isdefined(self.pers["skipserverinfo"]))
-			self openMenu(game["menu_team"]);
+		//if(!isdefined(self.pers["skipserverinfo"]))
+			//self openMenu(game["menu_team"]);
 
 		self.pers["team"] = "spectator";
 		self.sessionteam = "spectator";
@@ -584,6 +585,7 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 	if(self.sessionteam == "spectator")
 		return;
 
+	
 	// If the player was killed by a head shot, let players know it was a head shot kill
 	if(sHitLoc == "head" && sMeansOfDeath != "MOD_MELEE")
 		sMeansOfDeath = "MOD_HEAD_SHOT";
@@ -625,6 +627,8 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 					players = maps\mp\gametypes\_teams::CountPlayers();
 					players[self.leaving_team]--;
 					players[self.joining_team]++;
+
+					//maybe try putting this here
 
 					if((players[self.joining_team] - players[self.leaving_team]) > 1)
 					{
@@ -941,6 +945,7 @@ startRound()
 		ECmod\_sdScripts::stratTime(level.ec_sdFirstRoundStratTime);
 	else
 		ECmod\_sdScripts::stratTime(level.ec_sdStratTime);
+	
 	//Sh0k' <<
 
 	game["roundsplayed"] = game["axisscore"] + game["alliedscore"];
@@ -1027,7 +1032,8 @@ checkRoundTimeLimit(timer)
 		//because the text pops up too early for some reason
 		wait 1 * level.ec_fpsMultiplier; // Sh0k' +
 		iprintln(&"MP_TIMEHASEXPIRED");
-		level thread endRound("draw");
+		if (game["pregame"] == false) // Sh0k' +
+			level thread endRound("draw");
 		return;
 	}
 	
@@ -1138,6 +1144,7 @@ endRound(roundwinner)
 		players = getentarray("player", "classname");
 		for(i = 0; i < players.size; i++)
 		{
+			
 			lpGuid = players[i] getGuid();
 			if((isdefined(players[i].pers["team"])) && (players[i].pers["team"] == "allies"))
 				winners = (winners + ";" + lpGuid + ";" + players[i].name);
@@ -1510,10 +1517,12 @@ updateTeamStatus()
 		// if allies planted the bomb, continue the round
 		if(level.bombplanted && level.planting_team == "allies")
 			return;
-
-		iprintln(&"MP_ALLIESHAVEBEENELIMINATED");
-		level thread playSoundOnPlayers("mp_announcer_allieselim");
-		level thread endRound("axis");
+		if (game["pregame"] == false){ // Sh0k' +
+			iprintln(&"MP_ALLIESHAVEBEENELIMINATED");
+			level thread playSoundOnPlayers("mp_announcer_allieselim");
+			level thread endRound("axis");
+		}
+		
 		return;
 	}
 
@@ -1523,10 +1532,13 @@ updateTeamStatus()
 		// if axis planted the bomb, continue the round
 		if(level.bombplanted && level.planting_team == "axis")
 			return;
+		
+		if (game["pregame"] == false){ // Sh0k' +
+			iprintln(&"MP_AXISHAVEBEENELIMINATED");
+			level thread playSoundOnPlayers("mp_announcer_axiselim");
+			level thread endRound("allies");
+		}
 
-		iprintln(&"MP_AXISHAVEBEENELIMINATED");
-		level thread playSoundOnPlayers("mp_announcer_axiselim");
-		level thread endRound("allies");
 		return;
 	}
 }
@@ -2197,7 +2209,7 @@ announceWinner(winner, delay)
 		level thread playSoundOnPlayers("MP_announcer_allies_win");
 	else if(winner == "axis")
 		level thread playSoundOnPlayers("MP_announcer_axis_win");
-	else if(winner == "draw"){
+	else if(winner == "draw"){ //draw never happens reallistically so this code shouldn't exist
 		//level thread playSoundOnPlayers("MP_announcer_round_draw"); //Sh0k' -
 		return;
 	}	

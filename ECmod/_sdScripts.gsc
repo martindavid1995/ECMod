@@ -72,6 +72,10 @@ pregame(){
         setcvar("g_speed", 190);
         game["pregame"] = false;
 
+        maps\mp\gametypes\sd::resetScores();
+        level notify("restarting");
+
+	    map_restart(true);
         
     }
 
@@ -217,6 +221,8 @@ stratTime(time){
     level.strat_clock.fontscale = 1.3;
 	level.strat_clock setTimer(time);
 
+    iprintln("do we get here??");
+
     wait strattime;
 
     level.strat_time destroy();
@@ -228,15 +234,19 @@ stratTime(time){
     setcvar("g_speed", 190);
 
 }
-
+/** Sh0k'
+script that announces the winner of the game when the game ends
+ */
 endMatch(){
     game["winnerScreen"] = true;
 
+    //figure out who won
     if(game["alliedscore"] > game["axisscore"])
         winner = "allies";
     else
         winner = "axis";
 
+    //for all players
     players = getentarray("player", "classname");
 
     for (i = 0; i < players.size; i++){
@@ -244,13 +254,13 @@ endMatch(){
 
         if (winner == "allies"){
             if (player.pers["team"] == "allies"){
-                //player thread displayWinnerHuds(1); //allies win i'm allies
+                //allies win i'm allies
                 player iprintlnbold("^2-=VICTORY=-");
                 player iprintlnbold("Good work soldier!");
                 
             }                
             else{
-                //player thread displayWinnerHuds(0); //allies win i'm axis
+                //allies win i'm axis
                 player iprintlnbold("^1-=DEFEAT=-");
                 player iprintlnbold("Better luck next time");
                  
@@ -258,14 +268,14 @@ endMatch(){
                 
         }else{
             if (player.pers["team"] == "allies"){
-                //player thread displayWinnerHuds(0); //axis win i'm allies
+                //axis win i'm allies
                 player iprintlnbold("^1-=DEFEAT=-");
                 player iprintlnbold("Better luck next time");
                 
             }
                 
             else{
-                //player thread displayWinnerHuds(1); //axis win i'm axis
+                //axis win i'm axis
                 player iprintlnbold("^2-=VICTORY=-");
                 player iprintlnbold("Good work soldier!");
                 
@@ -274,9 +284,8 @@ endMatch(){
         }   
 
     }
-    wait 10;
+    wait 10; //hold it
     game["winnerScreen"] = false;
     return;
 }
-
 
