@@ -93,6 +93,8 @@ halftime(){
 
     level.doneHalftime = 1;
 
+    self setWeaponSlotAmmo("primary", 0);
+	self setWeaponSlotClipAmmo("primary", 0);
 
     //HUDs
     level.halftime_top = newHudElem();
@@ -228,6 +230,7 @@ stratTime(time){
     level.strat_time destroy();
     level.strat_clock destroy();
 
+
     //strat time over, start the round
     game["stratTime"] = false;
     //unfreeze
@@ -288,4 +291,3 @@ endMatch(){
     game["winnerScreen"] = false;
     return;
 }
-

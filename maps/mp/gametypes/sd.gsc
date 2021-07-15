@@ -627,8 +627,7 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 					players = maps\mp\gametypes\_teams::CountPlayers();
 					players[self.leaving_team]--;
 					players[self.joining_team]++;
-
-					//maybe try putting this here
+					
 
 					if((players[self.joining_team] - players[self.leaving_team]) > 1)
 					{
@@ -810,6 +809,7 @@ spawnPlayer()
 		self setSpawnWeapon(self.pers["weapon"]);
 	}
 
+	
 	maps\mp\gametypes\_weapons::givePistol();
 	maps\mp\gametypes\_weapons::giveGrenades();
 	maps\mp\gametypes\_weapons::giveBinoculars();
@@ -1256,6 +1256,17 @@ endRound(roundwinner)
 			}
 		}
 	}
+
+	// Sh0k' >>
+	players = getentarray("player", "classname");
+	for (i = 0; i < players.size; i++){
+		player = players[i];
+		if (player.pers["team"] == "spectator")
+			continue;
+		player.pers["weapon2"] = "none"; //wipe all secondaries
+		player.pers["weapon1"] = player.pers["weapon"]; //keep the default primary
+	}
+	// Sh0k' <<
 
 	level notify("restarting");
 
@@ -2511,6 +2522,8 @@ menuWeapon(response)
 			otherteam = "allies";
 		}
 
+		//wait until strat time is over here
+
 		// if joining a team that has no opponents, just spawn
 		if(!level.didexist[otherteam] && !level.roundended)
 		{
@@ -2524,8 +2537,8 @@ menuWeapon(response)
 					self setWeaponSlotClipAmmo("primary", 999);
 					self switchToWeapon(weapon);
 
-					maps\mp\gametypes\_weapons::givePistol();
-					maps\mp\gametypes\_weapons::giveGrenades();
+					maps\mp\gametypes\_weapons::givePistol(); 
+					maps\mp\gametypes\_weapons::giveGrenades(); 
 				}
 			}
 			else
