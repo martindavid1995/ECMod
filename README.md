@@ -5,9 +5,9 @@ and over the years many sophisticated game-changing mods increased in popularity
 that still exist run extremely overworked modpacks which make the game play nothing like the CoD2 that so many of us remember and love. 
 
 CoD2 was loved for its simplicity and responsiveness. It was a game that rewarded the player for their precision, reaction time, and game knowledge/experience. Heavy modpacks sacrifice these
-elements in their quest to add features that mimic more modern FPS titles. They do this by adding clunky scripts (that oftentimes create hundereds of concurrent threads) that bog down the game engine causing lag and poor hit-detection. 
+elements in their quest to add features that mimic more modern FPS titles. They do this by adding clunky scripts (that oftentimes create hundreds of concurrent threads) that bog down the game engine causing lag and poor hit-detection. 
 To compensate for the newly introduced lag, these mods oftentimes apply huge damage and fire-rate modifications to their weapons, add "killstreak" features like airstrikes, and increase the number of grenades allowed on the map. 
-These changes appeal to the lesser-skilled players who take the game less seriously, but for those of us who love the game in it's competitive sense, a lot is missing.
+These changes appeal to the lesser-skilled players who take the game less seriously, but for those of us who love the game in its competitive sense, a lot is missing.
 
 And thus, the desire was there. We wanted to create something that was as close to vanilla as possible, that had perfect hit-detection and response time. We wanted to include
 small QOL features that we enjoyed using in the early days of CoD2 mods such as sprinting and weapon restrictions. Most importantly, we wanted to offer the highest performance as possible,
@@ -36,11 +36,14 @@ This was the first goal that we set to accomplish with the ECMod, and all other 
     - Overhaul of gamemode timings in to account for increased `sv_fps`
     - Weapon balancing (Shotgun nerf, BAR/Bren buff)
     - Custom all-weapons menus
-    - Custom rifles-only menus, and the ability to designate maps as rifles-only from the config
+    - Custom rifles-only menus, and the ability to designate maps as rifles-only from the server config
+    - Removal of ambient effects
+    - Custom maps
     - Search and Destroy:
       - Halftime attacker/defender switch
       - Pregame freeze time
       - Preround freeze time (strat time)
+      - Configurable round times and round limits
       - Disabling carryover weapons into new rounds
       - Displaying match winner/loser at the end
       
@@ -55,4 +58,8 @@ This was the first goal that we set to accomplish with the ECMod, and all other 
  simple problems for days, forced to spend many hours painstakingly making tiny changes and testing until we could find a solution. 
 
 ## Special Thanks
- - `-=EC=-Nitemare` 
+ - `-=EC=-Nitemare` for spending countless hours with me developing new menus, testing, researching, brainstorming ideas, and fixing bugs.
+ - `-=EC=-Artorias` and `-=EC=-Gimp` for their help testing and coming up with ideas for new features and changes.
+ - `BeerGolem` for his help and support in testing, as well as providing crucial information and suggestions in the early days of the project. 
+ - Other members of the CoD2 community for their help testing, playing, and support throughout the development of the project. 
+ - The `Easy Company Gaming` community for the countless years of good times. 
