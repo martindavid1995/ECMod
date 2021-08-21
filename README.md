@@ -48,7 +48,7 @@ This was the first goal that we set to accomplish with the ECMod, and all other 
       - Displaying winner/loser at game end
       
 ## Challenges
- - Due to the game coming out in 2005, and most modders stopping working on the game by the early 2010s, there is a severe lack of documentation and modding resources for CoD2. 
+ - Due to the game coming out in 2005 and most modders stopping working on the game by the early 2010s, there is a severe lack of documentation and modding resources for CoD2. 
  This meant countless hours of trial-and-error testing, changing one line at a time, uploading it to the server, and seeing if did anything. It took dozens of hours to become 
  even moderately comfortable making changes to the game's source code.
  - CoD2 runs on a modified version of the id Tech 3 engine which is refered to as the IW2.0 engine. This amount of work that this engine handles is laughably small compared to modern game engines. 
