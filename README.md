@@ -62,4 +62,4 @@ This was the first goal that we set to accomplish with the ECMod, and all other 
  - `-=EC=-Artorias` and `-=EC=-Gimp` for their help testing and coming up with ideas for new features and changes.
  - `BeerGolem` for his help and support in testing, as well as providing crucial information and suggestions in the early days of the project. 
  - Other members of the CoD2 community for their help testing, playing, and support throughout the development of the project. 
- - The `Easy Company Gaming` community for the countless years of good times. 
+ - The `Easy Company Gaming` community for all of the good times. 
