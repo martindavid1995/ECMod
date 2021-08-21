@@ -45,7 +45,7 @@ This was the first goal that we set to accomplish with the ECMod, and all other 
       - Preround freeze time (strat time)
       - Configurable round times and round limits
       - Disabling carryover weapons into new rounds
-      - Displaying match winner/loser at the end
+      - Displaying winner/loser at game end
       
 ## Challenges
  - Due to the game coming out in 2005, and most modders stopping working on the game by the early 2010s, there is a severe lack of documentation and modding resources for CoD2. 
