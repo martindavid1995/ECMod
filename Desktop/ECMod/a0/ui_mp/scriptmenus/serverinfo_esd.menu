@@ -1,0 +1,373 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_TITLE		48 64
+#define ORIGIN_INSTRUCTIONS	80 84
+
+#define ORIGIN_SETTING1				200 168
+#define ORIGIN_SETTING2				200 188
+
+#define ORIGIN_SETTING3				200 216
+#define ORIGIN_SETTING4				200 236
+
+#define ORIGIN_SETTING5				200 264
+#define ORIGIN_SETTING6				200 284
+
+#define ORIGIN_SETTING7				200 312
+
+#define ORIGIN_SETTING8				550 168
+#define ORIGIN_SETTING9				550 188
+#define ORIGIN_SETTING10			550 208
+
+#define ORIGIN_SETTING11			550 236
+#define ORIGIN_SETTING12			550 256
+#define ORIGIN_SETTING13			550 276
+
+#define ORIGIN_SETTING14			300 304
+
+#define ORIGIN_MOTD						80 	370
+
+#define TEXTSCALE							0.3
+
+//#define ORIGIN_SERVERNAME	106 92
+
+{
+	menuDef
+	{
+		name			"serverinfo_esd"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			scriptMenuResponse "close";
+		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@ESD_ESD"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+
+// INSTRUCTIONS
+		itemDef
+		{
+			visible			1
+			rect			0 0 480 150
+			origin			ORIGIN_INSTRUCTIONS
+			forecolor		1 1 1 1
+			autowrapped
+			text			"@PC_PATCH_1_1_SD_OBJECTIVES"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		16
+			decoration
+		}
+
+// SERVER SETTINGS
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING1
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@MENU_SCORE_LIMIT_TEAM_POINTS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_scorelimit"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING2
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@MENU_TIME_LIMIT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_timelimit"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING3
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@MENU_ROUND_LIMIT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_roundlimit"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING4
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@MENU_ROUND_LENGTH"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_roundlength"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING5
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@ESD_RESPAWN"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_esd_respawn"
+			dvarFloatList		{ "@MENU_OFF" 0 "@MENU_ON" 1 }
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING6
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@ESD_RESPAWN_DELAY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_esd_respawndelay"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING7
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@ESD_ENDROUND_DEADTEAM"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_esd_endround_deadteam"
+			dvarFloatList		{ "@ESD_NO" 0 "@ESD_YES" 1 }
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING8
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@ESD_TIME_PLANT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_esd_planttime"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING9
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@ESD_TIME_DEFUSE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_esd_defusetime"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING10
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@ESD_TIME_EXPLODE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_esd_bombtimer"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING11
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@ESD_POINTS_PLANT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_esd_plantscore"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING12
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@ESD_POINTS_DEFUSE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_esd_defusescore"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING13
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@ESD_POINTS_DEFEND"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_esd_defendscore"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 340 66
+			origin			ORIGIN_SETTING14
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@ESD_MODE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_LEFT
+			textaligny		20
+			dvar			"ui_esd_mode"
+			dvarFloatList		{ "@ESD_MODE0" 0 "@ESD_MODE1" 1 "@ESD_MODE2" 2 "@ESD_MODE3" 3 "@ESD_MODE4" 4 }
+			decoration
+		}
+
+// MESSAGE OF THE DAY
+		itemDef
+		{
+			name			"text_motd"
+			visible			1
+			rect			0 0 480 150
+			origin			ORIGIN_MOTD
+			forecolor		1 1 1 1
+			autowrapped
+			dvar			"ui_motd"
+			textfont		UI_FONT_NORMAL
+			textscale		0.25
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		16
+			decoration
+		}
+
+// CLICK TO CONTINUE
+
+		itemDef
+		{
+			visible 		1
+			rect			0 0 640 480
+			type 			ITEM_TYPE_BUTTON
+			action
+			{
+				scriptMenuResponse "close";
+			}
+		}
+		
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			464 417
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			text			"@MPUI_CLICK_TO_CONTINUE"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		128
+			textaligny		24
+			decoration
+		}
+	}
+}

@@ -1,0 +1,118 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod2\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE						EHQ
+LANG_ENGLISH				"^5Enhanced Headquarters"
+
+REFERENCE						VERSION
+LANG_ENGLISH				"v 1.3"
+
+REFERENCE           OBJ_TEXT_NOSCORE
+LANG_ENGLISH        "Gain points by capturing and defending neutral HQs or by destroying enemy HQs."
+
+REFERENCE           ENGINEER_MODE
+LANG_ENGLISH        "Engineer Mode:  "
+
+REFERENCE           PLAYERS_ESTABLISH_RANDOM
+LANG_ENGLISH        "Number of players to establish HQ:  "
+
+REFERENCE           PLAYERS_ESTABLISH
+LANG_ENGLISH        "Max number of players to establish HQ:  "
+
+REFERENCE           PLAYERS_DESTROY_RANDOM
+LANG_ENGLISH        "Number of players to destroy HQ:  "
+
+REFERENCE           PLAYERS_DESTROY
+LANG_ENGLISH        "Max number of players needed to destroy HQ:  "
+
+REFERENCE           FIXED
+LANG_ENGLISH        "Fixed"
+
+REFERENCE           RANDOM
+LANG_ENGLISH        "Variable"
+
+REFERENCE           RESPAWN_DELAY
+LANG_ENGLISH        "Respawn delay for players (seconds):  "
+
+REFERENCE           RESPAWN_DEFENDERS
+LANG_ENGLISH        "Defenders can respawn:  "
+
+REFERENCE           YES
+LANG_ENGLISH        "Yes"
+
+REFERENCE           NO
+LANG_ENGLISH        "No"
+
+REFERENCE           DEFENDERS_RESPAWN_DELAY_PENALTY
+LANG_ENGLISH        "Extra respawn delay for defenders (seconds):  "
+
+REFERENCE           RADIO_SPAWN_DELAY
+LANG_ENGLISH        "Respawn delay for radio (seconds):  "
+
+REFERENCE           RADIO_MAX_HOLD_TIME
+LANG_ENGLISH        "Radio max hold time (seconds):  "
+
+REFERENCE           RADIO_CAPTURE_TIMEOUT
+LANG_ENGLISH        "Radio capture time out (seconds):  "
+
+REFERENCE           POINTS_ESTABLISH
+LANG_ENGLISH				"Points awarded for establishing a HQ:  "
+
+REFERENCE           POINTS_DESTROY
+LANG_ENGLISH				"Points awarded for destroying a HQ:  "
+
+REFERENCE           WEAPON_DISABLED
+LANG_ENGLISH				"Weapon disabled when capturing radio:  "
+
+REFERENCE           HELP1
+LANG_ENGLISH				"In Engineer Mode, only engineers have the ability to capture the radio. Engineers are randomly selected each time a HQ may be established or destroyed. Engineers are marked with a special head icon visible from team mates."
+
+REFERENCE           HELP2
+LANG_ENGLISH				"When the number of players to establish or destroy HQ is fixed, it's exactly the max number indicated just below. When it's variable, it will be a random value between 1 and the max number below. If several players are needed, they will have to be on the radio simultaneously to capture it."
+
+REFERENCE           HELP3
+LANG_ENGLISH				"Defenders don't respawn in standard COD2 Headquarters. If set to Yes, defenders will be able to respawn like attackers, but with an extra delay penalty."
+
+REFERENCE           TEAMKILLED_ENGINEER
+LANG_ENGLISH				"&&1 ^1teamkilled an engineer !!"
+
+REFERENCE           KILLED_ENGINEER
+LANG_ENGLISH				"&&1 ^7killed an ^5engineer^7 !"
+
+REFERENCE           CAPTURE_TIMEOUT
+LANG_ENGLISH				"No team has set up a HQ within &&1 seconds !"
+
+REFERENCE           ESTABLISHED
+LANG_ENGLISH				"&&1 ^7has established a HQ"
+
+REFERENCE           DESTROYED
+LANG_ENGLISH				"&&1 ^7has destroyed the HQ"
+
+REFERENCE           BECOME_ENGINEER1
+LANG_ENGLISH        "You have become an ^5engineer^7 !"
+
+REFERENCE           BECOME_ENGINEER2
+LANG_ENGLISH        "You have the ability to ^5capture the radio^7 !"
+
+REFERENCE           NO_LONGER_ENGINEER1
+LANG_ENGLISH        "You are no longer an engineer"
+
+REFERENCE           NO_LONGER_ENGINEER2
+LANG_ENGLISH        "You lost the ability to capture the radio"
+
+REFERENCE           ENGINEER_LEFT
+LANG_ENGLISH        "^5Engineer^7 &&1 ^7has left his team"
+
+ENDMARKER

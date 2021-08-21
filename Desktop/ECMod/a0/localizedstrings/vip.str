@@ -1,0 +1,118 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod2\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE						VIP
+LANG_ENGLISH				"^5V.I.P."
+
+REFERENCE						VERSION
+LANG_ENGLISH				"v 1.3"
+
+REFERENCE           OBJ_TEXT_NOSCORE
+LANG_ENGLISH        "Kill the VIP of the other team while protecting yours."
+
+REFERENCE           RESPAWN_DELAY
+LANG_ENGLISH        "Respawn delay (seconds):  "
+
+REFERENCE           VIP_DELAY
+LANG_ENGLISH        "VIP selection delay (seconds):  "
+										
+REFERENCE						VIP_VISIBILITY_TEAMMATES
+LANG_ENGLISH        "VIP visible on compass by team mates:  "
+
+REFERENCE           VIP_VISIBILITY_ENEMIES
+LANG_ENGLISH        "VIP visible on compass by enemies:  "
+
+REFERENCE           YES
+LANG_ENGLISH        "Yes"
+
+REFERENCE           NO
+LANG_ENGLISH        "No"
+
+REFERENCE           PISTOL
+LANG_ENGLISH        "VIP pistol:  "
+
+REFERENCE           SMOKE_NADES
+LANG_ENGLISH        "VIP smoke grenades:  "
+
+REFERENCE           FRAG_NADES
+LANG_ENGLISH        "VIP frag grenades:  "
+
+REFERENCE           HEALTH
+LANG_ENGLISH        "VIP health:  "
+
+REFERENCE           BINOCULARS
+LANG_ENGLISH        "Special binoculars:  "
+
+REFERENCE           POINTS_KILLING
+LANG_ENGLISH        "Individual points for killing a VIP:  "
+
+REFERENCE           POINTS_PROTECTING
+LANG_ENGLISH        "Individual points for protecting a VIP:  "
+
+REFERENCE           VIP_KILLED_HIMSELF
+LANG_ENGLISH				"^5VIP ^7&&1 ^1killed himself ^7!"
+
+REFERENCE           VIP_TEAMKILLED_BY
+LANG_ENGLISH				"&&1 ^1teamkilled^7 his ^5VIP^7 !!"
+
+REFERENCE           VIP_KILLED_BY
+LANG_ENGLISH				"&&1 ^7 killed the ^5VIP ^7!"
+
+REFERENCE           VIP_KILLED
+LANG_ENGLISH				"^5VIP ^7&&1 ^7was killed !"
+
+REFERENCE           PROTECTED_VIP
+LANG_ENGLISH				"&&1 ^7 protected his ^5VIP"
+
+REFERENCE           BECOME_VIP1
+LANG_ENGLISH        "You have become the ^5VIP^7 of your team"
+
+REFERENCE           BECOME_VIP2
+LANG_ENGLISH        "Good luck !"
+
+REFERENCE           NO_LONGER_VIP
+LANG_ENGLISH        "You are no longer the ^5VIP ^7of your team"
+
+REFERENCE           NEW_VIP_ALLIES
+LANG_ENGLISH        "&&1 ^7is the new allies ^5VIP"
+
+REFERENCE           NEW_VIP_AXIS
+LANG_ENGLISH        "&&1 ^7is the new axis ^5VIP"
+
+REFERENCE           VIP_CHANGE_TEAM
+LANG_ENGLISH        "You cannot change team as a VIP !"
+
+REFERENCE           VIP_SPECTATOR
+LANG_ENGLISH        "You cannot go spectator as a VIP !"
+
+REFERENCE           VIP_DISCONNECTED
+LANG_ENGLISH        "^5VIP ^7&&1 ^7has disconnected"
+
+REFERENCE           VIP_SPOTTED
+LANG_ENGLISH        "Enemy ^5VIP ^7spotted !"
+
+REFERENCE           VIP_ALIVE
+LANG_ENGLISH        "^5VIP^7 stayed alive for &&1"
+
+REFERENCE           VIP_ALIVE_RECORD
+LANG_ENGLISH        "^5VIP^7 stayed alive for &&1 - ^5New match record !"
+
+REFERENCE           POINTS_ALIVE
+LANG_ENGLISH        "Individual points to the VIP for staying alive:  "
+
+REFERENCE           ALIVE_CYCLE
+LANG_ENGLISH        "Time to stay alive for the VIP to score (minutes):  "
+
+ENDMARKER

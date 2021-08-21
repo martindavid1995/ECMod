@@ -1,0 +1,479 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_TITLE				48 64
+#define	ORIGIN_VERSION			600	64
+#define ORIGIN_INSTRUCTIONS	80 82
+
+#define ORIGIN_SETTING1		255 126
+#define ORIGIN_SETTING2		255 140
+
+#define ORIGIN_SETTING3		255 158
+
+#define ORIGIN_SETTING4		255 176
+#define ORIGIN_SETTING5		255 190
+#define ORIGIN_SETTING6		255 204
+#define ORIGIN_SETTING7		255 218
+
+#define ORIGIN_SETTING8		255 236
+#define ORIGIN_SETTING9		255 250
+#define ORIGIN_SETTING10	255 264
+
+#define ORIGIN_SETTING11	255 282
+#define ORIGIN_SETTING12	255 296
+#define ORIGIN_SETTING13	255 310
+
+#define ORIGIN_SETTING14	255 328
+#define ORIGIN_SETTING15	255 342
+
+#define ORIGIN_SETTING16	255 360
+
+#define ORIGIN_MOTD				80 	396
+
+//#define ORIGIN_SERVERNAME	106 92
+
+#define ORIGIN_HELP1			350 130
+#define ORIGIN_HELP2			350 210
+#define ORIGIN_HELP3			350 300
+
+#define TEXTSCALE					0.25
+
+{
+	menuDef
+	{
+		name			"serverinfo_ehq"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			scriptMenuResponse "close";
+		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+// TITLE
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@EHQ_EHQ"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+
+// VERSION
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_VERSION
+			forecolor		1 1 1 1
+			text			"@EHQ_VERSION"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			decoration
+		}
+
+// INSTRUCTIONS
+		itemDef
+		{
+			visible			1
+			rect			0 0 480 150
+			origin			ORIGIN_INSTRUCTIONS
+			forecolor		1 1 1 1
+			autowrapped
+			text			"@EHQ_OBJ_TEXT_NOSCORE"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		16
+			decoration
+		}
+
+// SERVER SETTINGS
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING1
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@MENU_SCORE_LIMIT_TEAM_POINTS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_scorelimit"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING2
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@MENU_TIME_LIMIT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_timelimit"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING3
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@EHQ_ENGINEER_MODE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_EngineerMode"
+			dvarFloatList		{ "@MENU_OFF" 0 "@MENU_ON" 1 }
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING4
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@EHQ_PLAYERS_ESTABLISH_RANDOM"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_PlayersToEstablishRandom"
+			dvarFloatList		{ "@EHQ_FIXED" 0 "@EHQ_RANDOM" 1 }
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING5
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@EHQ_PLAYERS_ESTABLISH"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_PlayersToEstablish"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING6
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@EHQ_PLAYERS_DESTROY_RANDOM"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_PlayersToDestroyRandom"
+			dvarFloatList		{ "@EHQ_FIXED" 0 "@EHQ_RANDOM" 1 }
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING7
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@EHQ_PLAYERS_DESTROY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_PlayersToDestroy"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING8
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@EHQ_RESPAWN_DELAY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_respawndelay"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING9
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@EHQ_RESPAWN_DEFENDERS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_DefendersCanRespawn"
+			dvarFloatList		{ "@EHQ_NO" 0 "@EHQ_YES" 1 }
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING10
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@EHQ_DEFENDERS_RESPAWN_DELAY_PENALTY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_DefendersRespawnDelayPenalty"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING11
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@EHQ_RADIO_SPAWN_DELAY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_RadioSpawnDelay"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING12
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@EHQ_RADIO_MAX_HOLD_TIME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_RadioMaxHoldSeconds"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING13
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@EHQ_RADIO_CAPTURE_TIMEOUT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_RadioCaptureTimeOut"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING14
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@EHQ_POINTS_ESTABLISH"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_PointsForEstablish"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING15
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@EHQ_POINTS_DESTROY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_PointsForDestroy"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING16
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@EHQ_WEAPON_DISABLED"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ehq_capturenoweapon"
+			dvarFloatList		{ "@EHQ_NO" 0 "@EHQ_YES" 1 }
+			decoration
+		}
+
+// HELP
+		itemDef
+		{
+			visible			1
+			rect			0 0 260 80
+			origin			ORIGIN_HELP1
+			forecolor		1 1 1 1
+			autowrapped
+			text			"@EHQ_HELP1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_LEFT
+			textaligny		20
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 260 80
+			origin			ORIGIN_HELP2
+			forecolor		1 1 1 1
+			autowrapped
+			text			"@EHQ_HELP2"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_LEFT
+			textaligny		20
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 260 80
+			origin			ORIGIN_HELP3
+			forecolor		1 1 1 1
+			autowrapped
+			text			"@EHQ_HELP3"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_LEFT
+			textaligny		20
+			decoration
+		}
+
+// MESSAGE OF THE DAY
+		itemDef
+		{
+			name			"text_motd"
+			visible			1
+			rect			0 0 480 150
+			origin			ORIGIN_MOTD
+			forecolor		1 1 1 1
+			autowrapped
+			dvar			"ui_motd"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		16
+			decoration
+		}
+
+// CLICK TO CONTINUE
+
+		itemDef
+		{
+			visible 		1
+			rect			0 0 640 480
+			type 			ITEM_TYPE_BUTTON
+			action
+			{
+				scriptMenuResponse "close";
+			}
+		}
+		
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			464 417
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			text			"@MPUI_CLICK_TO_CONTINUE"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		128
+			textaligny		24
+			decoration
+		}
+	}
+}

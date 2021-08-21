@@ -1,0 +1,52 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod2\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE						ECTF
+LANG_ENGLISH				"^5Enhanced Capture the Flag"
+
+REFERENCE           DEFEND1
+LANG_ENGLISH        "&&1 ^3has ^2defended ^3your flag!"
+
+REFERENCE           DEFEND2
+LANG_ENGLISH        "&&1 ^3has ^1defended ^3the enemy flag!"
+
+REFERENCE           ASSIST1
+LANG_ENGLISH        "&&1 ^3has ^2assisted ^3your flag carrier!"
+
+REFERENCE           ASSIST2
+LANG_ENGLISH        "&&1 ^3has ^1assisted ^3the enemy flag carrier!"
+
+REFERENCE           CAP1
+LANG_ENGLISH        "&&1 ^3has ^2captured ^3the enemy flag!"
+
+REFERENCE           CAP2
+LANG_ENGLISH        "&&1 ^3has ^1captured ^3your flag"
+
+REFERENCE           RET1
+LANG_ENGLISH        "&&1 ^3has ^2returned ^3your flag!"
+
+REFERENCE           RET2
+LANG_ENGLISH        "&&1 ^3has ^1returned ^3the enemy flag!"
+
+REFERENCE           TAKEN1
+LANG_ENGLISH        "&&1 ^3has ^1taken ^3your flag!"
+
+REFERENCE           TAKEN2
+LANG_ENGLISH        "&&1 ^3has ^2taken ^3the enemy flag!"
+
+REFERENCE           FLAGONENEMY
+LANG_ENGLISH        "^2WARNING:^1 Now you are visible on enemy compasses!"
+
+ENDMARKER

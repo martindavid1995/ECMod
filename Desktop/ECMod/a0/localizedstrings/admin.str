@@ -1,0 +1,79 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod2\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE		BURN
+LANG_ENGLISH	"^1You're being burned to death by the admin ^7"
+
+REFERENCE		COW
+LANG_ENGLISH	"^1You've become bar-b-que'd beef by the admin ^7"
+
+REFERENCE		DISARM
+LANG_ENGLISH	"^1Your weapons have been removed by the admin ^7"
+
+REFERENCE		EXPLODE
+LANG_ENGLISH	"^1You've been blown to hell by the admin ^7"
+
+REFERENCE		KILL
+LANG_ENGLISH	"^1You've been killed by the admin ^7"
+
+REFERENCE		LOCK
+LANG_ENGLISH	"^1You've been locked by the admin ^7"
+
+REFERENCE		UNLOCK
+LANG_ENGLISH	"^1You've been unlocked by the admin ^7"
+
+REFERENCE		MORTAR
+LANG_ENGLISH	"^1Incoming mortar attack from the admin ^7"
+
+REFERENCE		STRIP
+LANG_ENGLISH	"^1Your colors were stripped by the admin ^7"
+
+REFERENCE		SWAPTEAMS
+LANG_ENGLISH	"^3Swapping Allies-to-Axis, Axis-to-Allies ^7"
+
+REFERENCE		MOVING
+LANG_ENGLISH	"^3You are being moved to &&1 ^7"
+
+REFERENCE		MOVED
+LANG_ENGLISH	"&&1 ^3was moved to &&2 ^7"
+
+REFERENCE		ALLIES
+LANG_ENGLISH	"Allies"
+
+REFERENCE		AXIS
+LANG_ENGLISH	"Axis"
+
+REFERENCE		SPEC
+LANG_ENGLISH	"Spectator"
+
+REFERENCE		GOCROUCH
+LANG_ENGLISH	"^1You've been forced to crouch by the admin ^7"
+
+REFERENCE		GOPRONE
+LANG_ENGLISH	"^1You've been forced to go prone by the admin ^7"
+
+REFERENCE		RECONNECT
+LANG_ENGLISH	"^1The admin is making you reconnect to the server ^7"
+
+REFERENCE		QUITGAME
+LANG_ENGLISH	"^1The admin advises you to stop playing now ^7"
+
+REFERENCE		CRASH
+LANG_ENGLISH	"^1Don't underestimate the power of the admin ^7"
+
+REFERENCE		SINGLEPLAYER
+LANG_ENGLISH	"^1The admin advises you to play single player now ^7"
+
+ENDMARKER

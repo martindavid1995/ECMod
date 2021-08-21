@@ -1,0 +1,402 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_TITLE					48 	64
+//#define	ORIGIN_VERSION				600	64
+#define	ORIGIN_VERSION				590	64
+#define ORIGIN_INSTRUCTIONS		80 	84
+
+#define ORIGIN_SETTING1				200 148
+#define ORIGIN_SETTING2				200 168
+#define ORIGIN_SETTING3				200 188
+#define ORIGIN_SETTING4				200 208
+#define ORIGIN_SETTING5				200 228
+#define ORIGIN_SETTING6				200 248
+#define ORIGIN_SETTING7				200 268
+#define ORIGIN_SETTING8				200 288
+
+#define ORIGIN_SETTING9				550 148
+#define ORIGIN_SETTING10			550 168
+#define ORIGIN_SETTING11			550 188
+#define ORIGIN_SETTING12			550 208
+#define ORIGIN_SETTING13			550 228
+#define ORIGIN_SETTING14			550 248
+#define ORIGIN_SETTING15			550 268
+
+
+#define ORIGIN_MOTD						80 	380
+
+#define TEXTSCALE							0.3
+
+{
+	menuDef
+	{
+		name			"serverinfo_vip"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			scriptMenuResponse "close";
+		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+// TITLE
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@VIP_VIP"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+
+// VERSION
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_VERSION
+			forecolor		1 1 1 1
+			text			"@VIP_VERSION"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			decoration
+		}
+
+// INSTRUCTIONS
+		itemDef
+		{
+			visible			1
+			rect			0 0 480 150
+			origin			ORIGIN_INSTRUCTIONS
+			forecolor		1 1 1 1
+			autowrapped
+			text			"@VIP_OBJ_TEXT_NOSCORE"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		16
+			decoration
+		}
+
+// SERVER SETTINGS
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING1
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@MENU_SCORE_LIMIT_TEAM_POINTS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_scorelimit"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING2
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@MENU_TIME_LIMIT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_timelimit"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING3
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@VIP_RESPAWN_DELAY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_respawndelay"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING4
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@VIP_VIP_DELAY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_vipdelay"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING5
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@VIP_PISTOL"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_vippistol"
+			dvarFloatList		{ "@MPUI_OFF" 0 "@MPUI_ON" 1 }
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING6
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@VIP_SMOKE_NADES"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_vipsmokenades"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING7
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@VIP_FRAG_NADES"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_vipfragnades"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING8
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@VIP_HEALTH"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_viphealth"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING9
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@VIP_VIP_VISIBILITY_TEAMMATES"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_vipvisiblebyteammates"
+			dvarFloatList		{ "@VIP_NO" 0 "@VIP_YES" 1 }
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING10
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@VIP_VIP_VISIBILITY_ENEMIES"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_vipvisiblebyenemies"
+			dvarFloatList		{ "@VIP_NO" 0 "@VIP_YES" 1 }
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING11
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@VIP_POINTS_KILLING"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_pointsforkillingvip"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING12
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@VIP_POINTS_PROTECTING"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_pointsforprotectingvip"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING13
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@VIP_POINTS_ALIVE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_vippoints"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING14
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@VIP_ALIVE_CYCLE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_vippoints_cycle"
+			decoration
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING15
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_MULTI
+			text			"@VIP_BINOCULARS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_vip_binoculars"
+			dvarFloatList		{ "@MPUI_OFF" 0 "@MPUI_ON" 1 }
+			decoration
+		}
+
+// MESSAGE OF THE DAY
+		itemDef
+		{
+			name			"text_motd"
+			visible			1
+			rect			0 0 480 150
+			origin			ORIGIN_MOTD
+			forecolor		1 1 1 1
+			autowrapped
+			dvar			"ui_motd"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		16
+			decoration
+		}
+
+// CLICK TO CONTINUE
+
+		itemDef
+		{
+			visible 		1
+			rect			0 0 640 480
+			type 			ITEM_TYPE_BUTTON
+			action
+			{
+				scriptMenuResponse "close";
+			}
+		}
+		
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			464 417
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			text			"@MPUI_CLICK_TO_CONTINUE"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		128
+			textaligny		24
+			decoration
+		}
+	}
+}

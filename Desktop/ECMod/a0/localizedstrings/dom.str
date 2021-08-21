@@ -1,0 +1,48 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod2\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           DOMINATION
+LANG_ENGLISH        "Domination"
+
+REFERENCE           OBJ_TEXT
+LANG_ENGLISH        "Your team must capture all known flags in order to defeat the Axis/Allies."
+
+REFERENCE           OBJ_TEXT_NOSCORE
+LANG_ENGLISH        "Your team must capture all known flags in order to defeat the Axis/Allies."
+
+REFERENCE         SWITCH_SPAWNS
+LANG_FRENCH       "Switch spawns each round :"
+
+REFERENCE           START_NEXT_ROUND
+LANG_ENGLISH        "Starting next round..."
+
+REFERENCE           WAIT_FOR_TEAM
+LANG_ENGLISH        "Please wait for the other team!"
+
+REFERENCE           WAITING_FOR_PLAYERS
+LANG_ENGLISH        "Waiting for players in both teams..."
+
+REFERENCE           CAPTURE_TIMEOUT
+LANG_ENGLISH	  "One flag has not been captured within &&1 seconds"
+
+REFERENCE           NEW_FLAG
+LANG_ENGLISH	 "A new flag will spawn in &&1 seconds"
+
+REFERENCE         MATCH_STARTING
+LANG_ENGLISH	  "Match starting."
+
+ENDMARKER
+
+

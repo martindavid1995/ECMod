@@ -1,0 +1,176 @@
+// Modified by La Truffe
+
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod2\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           SPROT_ACT
+LANG_ENGLISH        "Spawn protection activated!"
+
+REFERENCE           SPROT_DEACT
+LANG_ENGLISH        "You are no longer protected!"
+
+REFERENCE           SPROT_DONT_ABUSE
+LANG_ENGLISH        "Don't abuse the spawnprotection!"
+
+REFERENCE           PICKED_HEALTH
+LANG_ENGLISH        "^3Picked up health!"
+
+REFERENCE           DUPLICATE_PLAYER_NAMES
+LANG_ENGLISH        "Duplicate playernames are not allowed"
+
+REFERENCE           MAX_TRIPWIRES_TEAM
+LANG_ENGLISH        "Sorry, the maximum number of tripwires for your team has been reached."
+
+REFERENCE           MAX_TRIPWIRES
+LANG_ENGLISH        "Sorry, the maximum number of tripwires has been reached."
+
+REFERENCE           WARNING_TRIPWIRE
+LANG_ENGLISH        "^1WARNING! ^7Tripwire!"
+
+REFERENCE           TRIPWIRE_ACTIVATES
+LANG_ENGLISH        "Tripwire activates in ^15 ^7seconds!"
+
+REFERENCE           ERROR_IN_MAPROT
+LANG_ENGLISH        "ERROR IN MAPROTATION!!! Will try to fix."
+
+REFERENCE           THIS_SERVER_RANDOM
+LANG_ENGLISH        "^3This server uses ^5random ^3maprotation."
+
+REFERENCE           THIS_SERVER_NORMAL
+LANG_ENGLISH        "^3This server uses ^5normal ^3maprotation."
+
+REFERENCE           BLANK
+LANG_ENGLISH        " "
+
+REFERENCE           THE_WINNER
+LANG_ENGLISH        "The winner is"
+
+REFERENCE           FIXMAPROT_LIMITING
+LANG_ENGLISH        "Fixmaprotation: ^1Limiting sv_maprotation to avoid server crash!"
+
+//EC
+REFERENCE           SELECT_SECONDARY
+LANG_ENGLISH        "Please select your secondary weapon"
+//
+REFERENCE           SELECT_PRIMARY
+LANG_ENGLISH        "Please select your primary weapon"
+
+REFERENCE           7_PISTOL
+LANG_ENGLISH        "7. Pistol"
+
+REFERENCE           8_PISTOL
+LANG_ENGLISH        "8. Pistol"
+
+// La Truffe ->
+REFERENCE           OVERHEATED
+LANG_ENGLISH        "^1OVERHEATED!"
+
+REFERENCE           8_ENFIELD
+LANG_ENGLISH        "8. Lee Enfield"
+
+REFERENCE           9_PISTOL
+LANG_ENGLISH        "9. Pistol"
+
+REFERENCE           6_AWE_CHANGE_GAME_TYPE
+LANG_ENGLISH        "6. [AWE] Change Game Type"
+
+REFERENCE           7_AWE_CHANGE_MAP
+LANG_ENGLISH        "7. [AWE] Change Map"
+
+REFERENCE           CHANGE_GAME_TYPE
+LANG_ENGLISH        "[AWE] Change Game Type"
+
+REFERENCE           CHANGE_MAP
+LANG_ENGLISH        "[AWE] Change Map"
+
+REFERENCE           STANDARD_GAME_TYPES
+LANG_ENGLISH        "^3Standard game types"
+
+REFERENCE           CUSTOM_GAME_TYPES
+LANG_ENGLISH        "^3Custom game types"
+
+REFERENCE           VOTE_CTF
+LANG_ENGLISH        "^5CTF - ^7Capture The Flag"
+
+REFERENCE           VOTE_DM
+LANG_ENGLISH        "^5DM - ^7Deathmatch"
+
+REFERENCE           VOTE_HQ
+LANG_ENGLISH        "^5HQ - ^7Headquarters"
+
+REFERENCE           VOTE_SD
+LANG_ENGLISH        "^5SD - ^7Search and Destroy"
+
+REFERENCE           VOTE_TDM
+LANG_ENGLISH        "^5TDM - ^7Team Deathmatch"
+
+REFERENCE           VOTE_BT
+LANG_ENGLISH        "^5BT - ^7Breakthrough"
+
+REFERENCE           VOTE_CTFB
+LANG_ENGLISH        "^5CTFB - ^7Capture The Flag Back"
+
+REFERENCE           VOTE_CNQ
+LANG_ENGLISH        "^5CNQ - ^7Conquest TDM"
+
+REFERENCE           VOTE_DOM
+LANG_ENGLISH        "^5DOM - ^7Domination"
+
+REFERENCE           VOTE_ECTF
+LANG_ENGLISH        "^5ECTF - ^7Enhanced Capture The Flag"
+
+REFERENCE           VOTE_EHQ
+LANG_ENGLISH        "^5EHQ - ^7Enhanced Headquarters"
+
+REFERENCE           VOTE_ESD
+LANG_ENGLISH        "^5ESD - ^7Enhanced Search and Destroy"
+
+REFERENCE           VOTE_HM
+LANG_ENGLISH        "^5HM - ^7Hitman"
+
+REFERENCE           VOTE_HTF
+LANG_ENGLISH        "^5HTF - ^7Hold The Flag"
+
+REFERENCE           VOTE_IHTF
+LANG_ENGLISH        "^5IHTF - ^7Individual Hold The Flag"
+
+REFERENCE           VOTE_LMS
+LANG_ENGLISH        "^5LMS - ^7Last Man Standing"
+
+REFERENCE           VOTE_LTS
+LANG_ENGLISH        "^5LTS - ^7Last Team Standing"
+
+REFERENCE           VOTE_ONS
+LANG_ENGLISH        "^5ONS - ^7Onslaught"
+
+REFERENCE           VOTE_RE
+LANG_ENGLISH        "^5RE - ^7Retrieval"
+
+REFERENCE           VOTE_VIP
+LANG_ENGLISH        "^5VIP - ^7V.I.P."
+
+REFERENCE           NEXT_60
+LANG_ENGLISH        "Next 60"
+
+REFERENCE           PREVIOUS_60
+LANG_ENGLISH        "Previous 60"
+
+REFERENCE           6_SERVERINFO
+LANG_ENGLISH        "6. Server Information"
+// La Truffe <-
+
+ENDMARKER
+
+

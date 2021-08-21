@@ -1,0 +1,90 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\mk\source_data\string_resources\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           HITMAN
+LANG_ENGLISH        "Hitman"
+
+REFERENCE           OBJECT
+LANG_ENGLISH        "Hitmen must kill the Group Commander, Guards must protect him. The person with the highest score wins."
+
+REFERENCE           TARGET_COMPASS
+LANG_ENGLISH        "Show Target on Compass:"
+
+REFERENCE           TARGET_COMPASS_UPDATES
+LANG_ENGLISH        "Target Updates On Compass (seconds):"
+
+REFERENCE           KILL_COMMANDER
+LANG_ENGLISH        "^1Hitmen must get past the ^3Guards to get to the ^4Commander"
+
+REFERENCE           NEW_HITMAN
+LANG_ENGLISH        "You are a ^1Hitman"
+
+REFERENCE           NEW_GUARD
+LANG_ENGLISH        "You are a ^3Guard"
+
+REFERENCE           NEW_COMMANDER
+LANG_ENGLISH        "You are the Group ^4Commander"
+
+REFERENCE           HITMAN_VS_HITMAN
+LANG_ENGLISH        "You were delayed respawning by another ^1Hitman"
+
+REFERENCE           POINTS_FOR_GUARD
+LANG_ENGLISH        "You scored 1 point for killing a ^3Guard"
+
+REFERENCE           OTHER_HITMANS
+LANG_ENGLISH        "Delay other ^1Hitmen"
+
+REFERENCE           AVOID_GUARDS
+LANG_ENGLISH        "Avoid ^3Guards"
+
+REFERENCE           HITMAN_KILL_COMMANDER
+LANG_ENGLISH        "Kill the Group ^4Commander"
+
+REFERENCE           COMMANDER_EVADE_HITMAN
+LANG_ENGLISH        "Evade or Kill ^1Hitmen"
+
+REFERENCE           GUARD_STOP_HITMAN
+LANG_ENGLISH        "Stop the ^1Hitmen"
+
+REFERENCE           GUARD_PROTECT_COMMANDER
+LANG_ENGLISH        "Protect the Group ^4Commander"
+
+REFERENCE           DONT_KILL_GUARDS
+LANG_ENGLISH        "Don't kill ^3Guards"
+
+REFERENCE           GUARD_KILLED_HITMAN
+LANG_ENGLISH        "You killed a ^1Hitman"
+
+REFERENCE           RESPAWN_HITMAN
+LANG_ENGLISH        "You will respawn as a ^1Hitman"
+
+REFERENCE           GUARD_CHOSEN_COMMANDER
+LANG_ENGLISH        "You have been marked as the Group ^4Commander, and will respawn"
+
+REFERENCE           GUARD_CHOSEN_HITMAN
+LANG_ENGLISH        "You have been chosen to be a ^1Hitman, and will respawn"
+
+REFERENCE           RESPAWN_GUARD
+LANG_ENGLISH        "You will respawn as a ^3Guard"
+
+REFERENCE           HITMAN_KILLEDBY_GUARD
+LANG_ENGLISH        "You were killed by a ^3Guard"
+
+REFERENCE           COMMANDER_KILLEDBY_HITMAN
+LANG_ENGLISH        "You were killed by a ^1Hitman"
+
+ENDMARKER
+
+

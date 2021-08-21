@@ -1,0 +1,79 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod2\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           IHTF
+LANG_ENGLISH        "^5Individual Hold the Flag"
+
+REFERENCE						VERSION
+LANG_ENGLISH				"v 1.3"
+
+REFERENCE           OBJ_TEXT
+LANG_ENGLISH        "Get the flag and keep it as long as possible to gain score. The first player to reach &&1 points wins."
+
+REFERENCE           OBJ_TEXT_NOSCORE
+LANG_ENGLISH        "Get the flag and keep it as long as possible to gain score."
+
+REFERENCE           MAX_HOLD_TIME
+LANG_ENGLISH        "Maximum hold time (seconds):  "
+
+REFERENCE           HOLD_TIME_TO_SCORE
+LANG_ENGLISH        "Hold time to score points (seconds):  "
+
+REFERENCE           TIMEOUT
+LANG_ENGLISH        "Flag time out (seconds):  "
+
+REFERENCE           RESPAWN_DELAY
+LANG_ENGLISH        "Respawn delay (seconds):  "
+
+REFERENCE           FLAG_SPAWN_DELAY
+LANG_ENGLISH        "Flag spawn delay (seconds):  "
+
+REFERENCE           POINTS_STEALING
+LANG_ENGLISH        "Points for stealing flag:  "
+
+REFERENCE           POINTS_HOLDING
+LANG_ENGLISH        "Points for holding flag:  "
+
+REFERENCE           POINTS_KILLING_FLAG_CARRIER
+LANG_ENGLISH        "Points for killing flag carrier:  "
+
+REFERENCE           POINTS_KILLING_PLAYERS
+LANG_ENGLISH        "Points for killing other players:  "
+
+REFERENCE           FLAG_TIMEOUT
+LANG_ENGLISH        "No one has stolen the flag within &&1 seconds..."
+
+REFERENCE           FLAG_MAXTIME
+LANG_ENGLISH        "The flag was held for the maximum time of &&1 seconds !"
+
+REFERENCE           STOLE_FLAG
+LANG_ENGLISH        "&&1 ^7stole the flag !"
+
+REFERENCE           YOU_STOLE_FLAG
+LANG_ENGLISH        "You stole the flag !"
+
+REFERENCE           KILLED_FLAG_CARRIER
+LANG_ENGLISH        "&&1 ^7killed the flag carrier !"
+
+REFERENCE           YOU_KILLED_FLAG_CARRIER
+LANG_ENGLISH        "You killed the flag carrier !"
+
+REFERENCE           FLAG_CARRIER_SCORES
+LANG_ENGLISH        "Flag carrier scores &&1 points"
+
+REFERENCE           YOU_SCORE
+LANG_ENGLISH        "You score &&1 points"
+
+ENDMARKER

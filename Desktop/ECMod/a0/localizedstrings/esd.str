@@ -1,0 +1,82 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod2\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE						ESD
+LANG_ENGLISH				"^5Enhanced Search and Destroy"
+
+REFERENCE						SWAP_TEAMS
+LANG_ENGLISH				"^2Half-time reached, preparing to swap teams"
+
+REFERENCE						DEFENDED_OBJECTIVE
+LANG_ENGLISH				"&&1^7 defended the objective"
+
+REFERENCE						DEFENDED_ALLIES
+LANG_ENGLISH				"&&1^7 defended the Allies bomb"
+
+REFERENCE						DEFENDED_AXIS
+LANG_ENGLISH				"&&1^7 defended the Axis bomb"
+
+REFERENCE           RESPAWN
+LANG_ENGLISH        "Ability to respawn:  "
+
+REFERENCE           RESPAWN_DELAY
+LANG_ENGLISH        "Respawn delay (seconds):  "
+
+REFERENCE           ENDROUND_DEADTEAM
+LANG_ENGLISH        "End round when team eliminated:  "
+
+REFERENCE           YES
+LANG_ENGLISH        "Yes"
+
+REFERENCE           NO
+LANG_ENGLISH        "No"
+
+REFERENCE           TIME_PLANT
+LANG_ENGLISH        "Time to plant a bomb (seconds):  "
+
+REFERENCE           TIME_DEFUSE
+LANG_ENGLISH        "Time to defuse a bomb (seconds):  "
+
+REFERENCE           TIME_EXPLODE
+LANG_ENGLISH        "Time for a bomb to explode (seconds):  "
+
+REFERENCE           POINTS_PLANT
+LANG_ENGLISH				"Points awarded for planting a bomb:  "
+
+REFERENCE           POINTS_DEFUSE
+LANG_ENGLISH				"Points awarded for defusing a bomb:  "
+
+REFERENCE           POINTS_DEFEND
+LANG_ENGLISH				"Points awarded for defending an objective:  "
+
+REFERENCE           MODE
+LANG_ENGLISH				"Mode :"
+
+REFERENCE           MODE0
+LANG_ENGLISH				"1 active bomb site at a time\nAttackers win when the bomb explodes\nDefenders win if they defuse the bomb"
+
+REFERENCE           MODE1
+LANG_ENGLISH				"2 active bomb sites\nAttackers win when the first bomb explodes\nDefused bomb removes the objective"
+
+REFERENCE           MODE2
+LANG_ENGLISH				"2 active bomb sites\nAttackers have to explode both bombs to win\nDefenders win if they defuse a bomb"
+
+REFERENCE           MODE3
+LANG_ENGLISH				"2 active bomb sites\nAttackers win when the first bomb explodes\nDefused bomb restores the objective"
+
+REFERENCE           MODE4
+LANG_ENGLISH				"2 active bomb sites\nAttackers have to explode both bombs to win\nDefused bomb restores the objective"
+
+ENDMARKER

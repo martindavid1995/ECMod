@@ -1,0 +1,102 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod2\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           BREAKTHROUGH
+LANG_ENGLISH        "Breakthrough"
+
+REFERENCE           OBJ_TEXT
+LANG_ENGLISH        "Your team must capture every objective to win.\n The current objective is shown on the compass."
+
+REFERENCE           OBJ_TEXT_NOSCORE
+LANG_ENGLISH        "Your team must capture every objective to win.\n The current objective is shown on the compass."
+
+REFERENCE           START_NEXT_ROUND
+LANG_ENGLISH        "Starting next round..."
+
+REFERENCE           WAIT_FOR_TEAM
+LANG_ENGLISH        "Please wait for the other team!"
+
+REFERENCE           WAITING_FOR_PLAYERS
+LANG_ENGLISH        "Waiting for players in both teams..."
+
+REFERENCE         MATCH_STARTING
+LANG_ENGLISH	  "Match starting."
+
+REFERENCE		     AXIS_OBJECTIVE_TAKEN
+LANG_ENGLISH     "The ^5Germans^7 have taken an ^1Objective^7...\n The ^3Allies^7 are loosing ground !"
+
+REFERENCE		     ALLIES_OBJECTIVE_TAKEN
+LANG_ENGLISH     "The ^5Allies^7 have taken an ^1Objective^7...\n The ^3Germans^7 are loosing ground!"
+
+REFERENCE		     CAPTURE_NO_WEAPON
+LANG_FRENCH     "Weapons disabled during capture :"
+
+REFERENCE         SWITCH_SPAWNS
+LANG_FRENCH       "Switch spawns each round :"
+
+REFERENCE           DEFEND
+LANG_ENGLISH        "&&1 ^3has ^2stopped ^3the enemy capture!"
+
+REFERENCE           ASSIST
+LANG_ENGLISH        "&&1 ^3has ^2helped ^3the capture!"
+
+REFERENCE           CAP
+LANG_ENGLISH        "&&1 ^3has ^2captured ^3the objective!"
+
+REFERENCE           DRUNKARDS
+LANG_ENGLISH        "Drunkards Mode :"
+
+REFERENCE           D_OBJ_TEXT
+LANG_ENGLISH        "Your team must drink every wine crate to win.\n The current wine crate is shown on the compass."
+
+REFERENCE           D_OBJ_TEXT_NOSCORE
+LANG_ENGLISH        "Your team must drink every wine crate to win.\n The current wine crate is shown on the compass."
+
+REFERENCE           D_START_NEXT_ROUND
+LANG_ENGLISH        "Starting next booze-up..."
+
+REFERENCE           D_WAIT_FOR_TEAM
+LANG_ENGLISH        "Please wait for the other team to get drunk!"
+
+REFERENCE           D_WAITING_FOR_PLAYERS
+LANG_ENGLISH        "Waiting for drunkards in both teams..."
+
+REFERENCE         D_MATCH_STARTING
+LANG_ENGLISH	  "Booze-up starting."
+
+REFERENCE		      D_AXIS_OBJECTIVE_TAKEN
+LANG_ENGLISH     "The ^5Germans^7 have drunk a ^1Wine Crate^7...\n The ^3Allies^7 get thirsty !"
+
+REFERENCE		     D_ALLIES_OBJECTIVE_TAKEN
+LANG_ENGLISH     "The ^5Allies^7 have drunk a ^1Wine Crate^7...\n The ^3Germans^7 get thirsty!"
+
+REFERENCE		     D_CAPTURE_NO_WEAPON
+LANG_FRENCH     "Weapons disabled during drink :"
+
+REFERENCE           D_DEFEND
+LANG_ENGLISH        "&&1 ^3has ^2stopped ^3the enemy booze!"
+
+REFERENCE           D_ASSIST
+LANG_ENGLISH        "&&1 ^3has ^2helped ^3the booze!"
+
+REFERENCE           D_CAP
+LANG_ENGLISH        "&&1 ^3has ^2drunk ^3the wine crate!"
+
+REFERENCE           D_OMG
+LANG_ENGLISH        "^1Oh My God^7 ! Am I ^6drunk^7 or what ?!?..."
+
+ENDMARKER
+
+

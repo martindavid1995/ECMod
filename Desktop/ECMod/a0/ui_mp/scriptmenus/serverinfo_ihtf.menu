@@ -1,0 +1,325 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_TITLE					48 64
+#define	ORIGIN_VERSION				600	64
+#define ORIGIN_INSTRUCTIONS		80 84
+
+#define ORIGIN_SETTING1				240 148
+#define ORIGIN_SETTING2				240 168
+#define ORIGIN_SETTING3				240 198
+#define ORIGIN_SETTING4				240 218
+#define ORIGIN_SETTING5				240 238
+#define ORIGIN_SETTING6				240 268
+#define ORIGIN_SETTING7				240 288
+
+#define ORIGIN_SETTING8				530 148
+#define ORIGIN_SETTING9				530 168
+#define ORIGIN_SETTING10			530 198
+#define ORIGIN_SETTING11			530 218
+#define ORIGIN_SETTING12			530 248
+
+#define ORIGIN_MOTD						80 380
+
+#define TEXTSCALE							0.3
+
+{
+	menuDef
+	{
+		name			"serverinfo_ihtf"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			scriptMenuResponse "close";
+		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+// TITLE
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@IHTF_IHTF"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+
+// VERSION
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_VERSION
+			forecolor		1 1 1 1
+			text			"@IHTF_VERSION"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			decoration
+		}
+
+// INSTRUCTIONS
+		itemDef
+		{
+			visible			1
+			rect			0 0 480 150
+			origin			ORIGIN_INSTRUCTIONS
+			forecolor		1 1 1 1
+			autowrapped
+			text			"@IHTF_OBJ_TEXT_NOSCORE"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		16
+			decoration
+		}
+
+// SERVER SETTINGS
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING1
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@MENU_SCORE_LIMIT_PLAYER_POINTS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_scorelimit"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING2
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@MENU_TIME_LIMIT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_timelimit"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING3
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@IHTF_MAX_HOLD_TIME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ihtf_maxholdtime"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING4
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@IHTF_HOLD_TIME_TO_SCORE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ihtf_holdtimetoscore"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING5
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@IHTF_TIMEOUT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ihtf_flagtimeout"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING6
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@IHTF_RESPAWN_DELAY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ihtf_respawndelay"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING7
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@IHTF_FLAG_SPAWN_DELAY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ihtf_flagspawndelay"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING8
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@IHTF_POINTS_STEALING"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ihtf_pointsforstealingflag"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING9
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@IHTF_POINTS_HOLDING"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ihtf_pointsforholdingflag"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING10
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@IHTF_POINTS_KILLING_FLAG_CARRIER"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ihtf_pointsforkillingflagcarrier"
+			decoration
+		}
+
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SETTING11
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_NUMERICFIELD
+			text			"@IHTF_POINTS_KILLING_PLAYERS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		20
+			dvar			"ui_ihtf_pointsforkillingplayers"
+			decoration
+		}
+
+// MESSAGE OF THE DAY
+		itemDef
+		{
+			name			"text_motd"
+			visible			1
+			rect			0 0 480 150
+			origin			ORIGIN_MOTD
+			forecolor		1 1 1 1
+			autowrapped
+			dvar			"ui_motd"
+			textfont		UI_FONT_NORMAL
+			textscale		0.25
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		16
+			decoration
+		}
+
+// CLICK TO CONTINUE
+
+		itemDef
+		{
+			visible 		1
+			rect			0 0 640 480
+			type 			ITEM_TYPE_BUTTON
+			action
+			{
+				scriptMenuResponse "close";
+			}
+		}
+		
+		itemDef
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			464 417
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			text			"@MPUI_CLICK_TO_CONTINUE"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		128
+			textaligny		24
+			decoration
+		}
+	}
+}

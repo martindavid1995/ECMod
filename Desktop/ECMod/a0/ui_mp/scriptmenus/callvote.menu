@@ -1,0 +1,4151 @@
+// Modified by La Truffe
+
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_TITLE			48 64
+#define ORIGIN_CHOICE1		80 84
+#define ORIGIN_CHOICE2		80 108
+#define ORIGIN_CHOICE3		80 132
+#define ORIGIN_CHOICE4		80 156
+#define ORIGIN_CHOICE5		80 180
+#define ORIGIN_CHOICE6		80 204
+#define ORIGIN_CHOICE7		80 228
+#define ORIGIN_OK					80 372
+
+#define ORIGIN_STANDARD		60 94
+#define ORIGIN_CTF				60 104
+#define ORIGIN_DM					60 124
+#define ORIGIN_HQ					60 144
+#define ORIGIN_SD					60 164
+#define ORIGIN_TDM				60 184
+
+#define ORIGIN_CUSTOM			320 94
+#define ORIGIN_BT					320 104
+#define ORIGIN_CNQ				320 124
+#define ORIGIN_CTFB				320 144
+#define ORIGIN_DOM				320 164
+#define ORIGIN_ECTF				320 184
+#define ORIGIN_EHQ				320 204
+#define ORIGIN_ESD				320 224
+#define ORIGIN_HM					320 244
+#define ORIGIN_HTF				320 264
+#define ORIGIN_IHTF				320 284
+#define ORIGIN_LMS				320 304
+#define ORIGIN_LTS				320 324
+#define ORIGIN_ONS				320 344
+#define ORIGIN_RE					320 364
+#define ORIGIN_VIP				320 384
+
+#define ORIGIN_NEXT				560 420
+#define ORIGIN_PREVIOUS		16 420
+
+#define ORIGIN_MAP_1			16 78
+#define ORIGIN_MAP_2			16 94
+#define ORIGIN_MAP_3			16 110
+#define ORIGIN_MAP_4			16 126
+#define ORIGIN_MAP_5			16 142
+#define ORIGIN_MAP_6			16 158
+#define ORIGIN_MAP_7			16 174
+#define ORIGIN_MAP_8			16 190
+#define ORIGIN_MAP_9			16 206
+#define ORIGIN_MAP_10			16 222
+#define ORIGIN_MAP_11			16 238
+#define ORIGIN_MAP_12			16 254
+#define ORIGIN_MAP_13			16 270
+#define ORIGIN_MAP_14			16 286
+#define ORIGIN_MAP_15			16 302
+#define ORIGIN_MAP_16			16 318
+#define ORIGIN_MAP_17			16 334
+#define ORIGIN_MAP_18			16 350
+#define ORIGIN_MAP_19			16 366
+#define ORIGIN_MAP_20			16 382
+#define ORIGIN_MAP_21			229 78
+#define ORIGIN_MAP_22			229 94
+#define ORIGIN_MAP_23			229 110
+#define ORIGIN_MAP_24			229 126
+#define ORIGIN_MAP_25			229 142
+#define ORIGIN_MAP_26			229 158
+#define ORIGIN_MAP_27			229 174
+#define ORIGIN_MAP_28			229 190
+#define ORIGIN_MAP_29			229 206
+#define ORIGIN_MAP_30			229 222
+#define ORIGIN_MAP_31			229 238
+#define ORIGIN_MAP_32			229 254
+#define ORIGIN_MAP_33			229 270
+#define ORIGIN_MAP_34			229 286
+#define ORIGIN_MAP_35			229 302
+#define ORIGIN_MAP_36			229 318
+#define ORIGIN_MAP_37			229 334
+#define ORIGIN_MAP_38			229 350
+#define ORIGIN_MAP_39			229 366
+#define ORIGIN_MAP_40			229 382
+#define ORIGIN_MAP_41			442 78
+#define ORIGIN_MAP_42			442 94
+#define ORIGIN_MAP_43			442 110
+#define ORIGIN_MAP_44			442 126
+#define ORIGIN_MAP_45			442 142
+#define ORIGIN_MAP_46			442 158
+#define ORIGIN_MAP_47			442 174
+#define ORIGIN_MAP_48			442 190
+#define ORIGIN_MAP_49			442 206
+#define ORIGIN_MAP_50			442 222
+#define ORIGIN_MAP_51			442 238
+#define ORIGIN_MAP_52			442 254
+#define ORIGIN_MAP_53			442 270
+#define ORIGIN_MAP_54			442 286
+#define ORIGIN_MAP_55			442 302
+#define ORIGIN_MAP_56			442 318
+#define ORIGIN_MAP_57			442 334
+#define ORIGIN_MAP_58			442 350
+#define ORIGIN_MAP_59			442 366
+#define ORIGIN_MAP_60			442 382
+
+#define ORIGIN_MAP_61			16 78
+#define ORIGIN_MAP_62			16 94
+#define ORIGIN_MAP_63			16 110
+#define ORIGIN_MAP_64			16 126
+#define ORIGIN_MAP_65			16 142
+#define ORIGIN_MAP_66			16 158
+#define ORIGIN_MAP_67			16 174
+#define ORIGIN_MAP_68			16 190
+#define ORIGIN_MAP_69			16 206
+#define ORIGIN_MAP_70			16 222
+#define ORIGIN_MAP_71			16 238
+#define ORIGIN_MAP_72			16 254
+#define ORIGIN_MAP_73			16 270
+#define ORIGIN_MAP_74			16 286
+#define ORIGIN_MAP_75			16 302
+#define ORIGIN_MAP_76			16 318
+#define ORIGIN_MAP_77			16 334
+#define ORIGIN_MAP_78			16 350
+#define ORIGIN_MAP_79			16 366
+#define ORIGIN_MAP_80			16 382
+#define ORIGIN_MAP_81			229 78
+#define ORIGIN_MAP_82			229 94
+#define ORIGIN_MAP_83			229 110
+#define ORIGIN_MAP_84			229 126
+#define ORIGIN_MAP_85			229 142
+#define ORIGIN_MAP_86			229 158
+#define ORIGIN_MAP_87			229 174
+#define ORIGIN_MAP_88			229 190
+#define ORIGIN_MAP_89			229 206
+#define ORIGIN_MAP_90			229 222
+#define ORIGIN_MAP_91			229 238
+#define ORIGIN_MAP_92			229 254
+#define ORIGIN_MAP_93			229 270
+#define ORIGIN_MAP_94			229 286
+#define ORIGIN_MAP_95			229 302
+#define ORIGIN_MAP_96			229 318
+#define ORIGIN_MAP_97			229 334
+#define ORIGIN_MAP_98			229 350
+#define ORIGIN_MAP_99			229 366
+#define ORIGIN_MAP_100		229 382
+#define ORIGIN_MAP_101		442 78
+#define ORIGIN_MAP_102		442 94
+#define ORIGIN_MAP_103		442 110
+#define ORIGIN_MAP_104		442 126
+#define ORIGIN_MAP_105		442 142
+#define ORIGIN_MAP_106		442 158
+#define ORIGIN_MAP_107		442 174
+#define ORIGIN_MAP_108		442 190
+#define ORIGIN_MAP_109		442 206
+#define ORIGIN_MAP_110		442 222
+#define ORIGIN_MAP_111		442 238
+#define ORIGIN_MAP_112		442 254
+#define ORIGIN_MAP_113		442 270
+#define ORIGIN_MAP_114		442 286
+#define ORIGIN_MAP_115		442 302
+#define ORIGIN_MAP_116		442 318
+#define ORIGIN_MAP_117		442 334
+#define ORIGIN_MAP_118		442 350
+#define ORIGIN_MAP_119		442 366
+#define ORIGIN_MAP_120		442 382
+
+#define TEXTSCALE_GT			0.3
+#define TEXTSCALE_MAP			0.25
+
+{
+	menuDef
+	{
+		name			"callvote"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			close callvote;
+		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			//rect			-107 0 554 480
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@MENU_OPTIONS"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+
+// MENU CHOICES
+		execKey "1" { play "mouse_click"; exec "cmd callvote map_restart"; close callvote }
+		execKey "2" { play "mouse_click"; exec "cmd callvote map_rotate"; close callvote }
+		execKey "3" { play "mouse_click"; close callvote; open changemap }
+		execKey "4" { play "mouse_click"; close callvote; open changegametype }
+		execKey "5" { play "mouse_click"; close callvote; open kickplayer }
+		execKey "6" { play "mouse_click"; close callvote; open awe_changegametype }
+		execKey "7" { play "mouse_click"; close callvote; open awe_changemap_1_60 }
+
+		itemDef 
+		{
+			name			"button_restartmap"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE1
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_1_RESTART_MAP"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "cmd callvote map_restart";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+			
+		itemDef 
+		{
+			name			"button_nextmap"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE2
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_2_NEXT_MAP"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "cmd callvote map_rotate";
+				close callvote;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_changemap"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE3
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_3_CHANGE_MAP"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				close callvote;
+				open changemap;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_changegametype"
+			visible			1
+			rect			0 0 174 24
+			origin			ORIGIN_CHOICE4
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_4_CHANGE_GAME_TYPEMAP"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				close callvote;
+				open changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_kickplayer"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE5
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_5_KICK_PLAYER"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				close callvote;
+				open kickplayer;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_awe_changegametype"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE6
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@AWE_6_AWE_CHANGE_GAME_TYPE"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_gametype"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				close callvote;
+				open awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_awe_changemap_1_60"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE7
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@AWE_7_AWE_CHANGE_MAP"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_map"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				close callvote;
+				open awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+	}
+	
+	menuDef
+	{
+		name			"changemap"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			close changemap;
+		}
+
+		itemDef
+		{
+			name			map
+			visible			1
+			style			0
+			ownerdraw		UI_STARTMAPCINEMATIC
+			rect			0 0 640 480
+			origin			0 0
+			border			1
+			bordercolor		1 1 1 1
+			decoration
+		}
+		
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			//rect			-107 0 554 480
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@MPUI_CHANGE_MAP"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+
+// CHANGE MAP
+		itemDef 
+		{
+			visible			1
+			rect			0 0 192 270
+			origin			73 80
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			style			WINDOW_STYLE_FILLED
+			outlinecolor	.5 .5 .5 .5
+			type			ITEM_TYPE_LISTBOX
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textfont		UI_FONT_NORMAL
+			textaligny		-1
+			elementtype		LISTBOX_TEXT
+			elementwidth	120
+			elementheight	24
+			feeder			FEEDER_ALLMAPS
+			columns			1 2 190 25
+			mouseEnter
+			{
+				fadein message_arena;
+			} 
+			mouseExit
+			{
+				fadeout message_arena;
+			} 
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_OK
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_OK"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				uiScript voteMap;
+				close changemap;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+	}
+	
+	menuDef
+	{
+		name			"changegametype"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			close changegametype;
+		}
+
+		itemDef
+		{
+			visible			1
+			style			0
+			ownerdraw		UI_STARTMAPCINEMATIC
+			rect			0 0 640 480
+			origin			0 0
+			border			1
+			bordercolor		1 1 1 1
+			decoration
+		}
+		
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			//rect			-107 0 554 480
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@MPUI_CHANGE_GAME_TYPEMAP"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+		
+// CHANGE GAME TYPE
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE1
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			ownerdraw		UI_NETGAMETYPE
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 192 222
+			origin			73 128
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			style			WINDOW_STYLE_FILLED
+			outlinecolor	.5 .5 .5 .5
+			type			ITEM_TYPE_LISTBOX
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textfont		UI_FONT_NORMAL
+			textaligny		-1
+			elementtype		LISTBOX_TEXT
+			elementwidth	120
+			elementheight	24
+			feeder			FEEDER_ALLMAPS
+			columns			1 2 190 25
+			mouseEnter
+			{
+				fadein message_arena;
+			} 
+			mouseExit
+			{
+				fadeout message_arena;
+			} 
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_OK
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_OK"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				uiScript voteTypeMap;
+				close changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+	}
+
+	menuDef
+	{
+		name			"kickplayer"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			close kickplayer;
+		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			//rect			-107 0 554 480
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@MPUI_KICK_PLAYER"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+
+// KICK PLAYER
+		itemDef 
+		{
+			visible			1
+			rect			0 0 192 270
+			origin			73 80
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			style			WINDOW_STYLE_FILLED
+			outlinecolor	.5 .5 .5 .5
+			type			ITEM_TYPE_LISTBOX
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textfont		UI_FONT_NORMAL
+			textaligny		-1
+			elementtype		LISTBOX_TEXT
+			elementwidth	120
+			elementheight	24
+			feeder			FEEDER_PLAYER_LIST
+			columns			1 2 190 25
+			mouseEnter
+			{
+				fadein message_arena
+			} 
+			mouseExit
+			{
+				fadeout message_arena
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_OK
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_OK"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				uiScript voteTempBan;
+				close kickplayer;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+	}
+	
+	menuDef
+	{
+		name			"awe_changegametype"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			close awe_changegametype;
+		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@AWE_CHANGE_GAME_TYPE"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+		
+// AWE CHANGE GAME TYPE
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_STANDARD
+			forecolor		1 1 1 1
+			text			"@AWE_STANDARD_GAME_TYPES"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			decoration
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_CUSTOM
+			forecolor		1 1 1 1
+			text			"@AWE_CUSTOM_GAME_TYPES"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			decoration
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CTF
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_CTF"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_ctf"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype ctf";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_DM
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_DM"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_dm"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype dm";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_HQ
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_HQ"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_hq"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype hq";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SD
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_SD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_sd"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype sd";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_TDM
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_TDM"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_tdm"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype tdm";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_BT
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_BT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_bt"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype bt";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CNQ
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_CNQ"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_cnq"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype cnq";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CTFB
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_CTFB"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_ctfb"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype ctfb";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_DOM
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_DOM"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_dom"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype dom";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_ECTF
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_ECTF"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_ectf"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype ectf";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_EHQ
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_EHQ"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_ehq"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype ehq";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_ESD
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_ESD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_esd"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype esd";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_HM
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_HM"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_hm"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype hm";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_HTF
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_HTF"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_htf"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype htf";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_IHTF
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_IHTF"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_ihtf"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype ihtf";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_LMS
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_LMS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_lms"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype lms";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_LTS
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_LTS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_lts"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype lts";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_ONS
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_ONS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_ons"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype ons";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_RE
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_RE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_re"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype re";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_VIP
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text				"@AWE_VOTE_VIP"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_GT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_allow_vip"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				exec "callvote g_gametype vip";
+				close awe_changegametype;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+	}
+
+	menuDef
+	{
+		name			"awe_changemap_1_60"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			close awe_changemap_1_60;
+		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@AWE_CHANGE_MAP"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+		
+// AWE CHANGE MAP
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_1
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_1";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_2
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_2"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_2";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_3
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_3"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_3";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_4
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_4"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_4";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_5
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_5"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_5";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_6
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_6"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_6";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_7
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_7"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_7";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_8
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_8"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_8";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_9
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_9"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_9";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_10
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_10"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_10";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_11
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_11"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_11";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_12
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_12"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_12";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_13
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_13"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_13";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_14
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_14"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_14";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_15
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_15"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_15";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_16
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_16"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_16";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_17
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_17"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_17";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_18
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_18"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_18";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_19
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_19"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_19";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_20
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_20"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_20";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_21
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_21"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_21";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_22
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_22"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_22";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_23
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_23"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_23";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_24
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_24"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_24";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_25
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_25"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_25";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_26
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_26"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_26";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_27
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_27"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_27";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_28
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_28"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_28";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_29
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_29"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_29";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_30
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_30"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_30";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_31
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_31"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_31";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_32
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_32"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_32";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_33
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_33"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_33";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_34
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_34"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_34";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_35
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_35"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_35";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_36
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_36"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_36";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_37
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_37"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_37";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_38
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_38"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_38";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_39
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_39"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_39";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_40
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_40"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_40";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_41
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_41"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_41";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_42
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_42"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_42";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_43
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_43"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_43";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_44
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_44"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_44";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_45
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_45"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_45";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_46
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_46"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_46";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_47
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_47"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_47";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_48
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_48"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_48";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_49
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_49"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_49";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_50
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_50"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_50";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_51
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_51"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_51";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_52
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_52"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_52";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_53
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_53"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_53";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_54
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_54"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_54";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_55
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_55"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_55";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_56
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_56"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_56";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_57
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_57"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_57";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_58
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_58"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_58";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_59
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_59"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_59";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_60
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_60"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_60";
+				close awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_NEXT
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@AWE_NEXT_60"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_ingame_vote_map_next"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				close awe_changemap_1_60;
+				open awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+	}
+
+	menuDef
+	{
+		name			"awe_changemap_61_120"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			close awe_changemap_61_120;
+		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@AWE_CHANGE_MAP"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+		
+// AWE CHANGE MAP
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_61
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_61"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_61";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_62
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_62"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_62";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_63
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_63"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_63";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_64
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_64"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_64";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_65
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_65"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_65";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_66
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_66"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_66";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_67
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_67"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_67";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_68
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_68"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_68";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_69
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_69"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_69";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_70
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_70"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_70";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_71
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_71"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_71";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_72
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_72"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_72";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_73
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_73"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_73";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_74
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_74"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_74";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_75
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_75"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_75";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_76
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_76"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_76";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_77
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_77"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_77";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_78
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_78"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_78";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_79
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_79"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_79";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_80
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_80"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_80";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_81
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_81"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_81";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_82
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_82"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_82";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_83
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_83"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_83";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_84
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_84"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_84";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_85
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_85"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_85";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_86
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_86"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_86";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_87
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_87"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_87";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_88
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_88"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_88";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_89
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_89"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_89";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_90
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_90"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_90";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_91
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_91"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_91";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_92
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_92"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_92";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_93
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_93"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_93";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_94
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_94"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_94";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_95
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_95"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_95";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_96
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_96"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_96";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_97
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_97"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_97";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_98
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_98"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_98";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_99
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_99"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_99";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_100
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_100"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_100";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_101
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_101"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_101";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_102
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_102"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_102";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_103
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_103"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_103";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_104
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_104"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_104";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_105
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_105"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_105";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_106
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_106"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_106";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_107
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_107"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_107";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_108
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_108"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_108";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_109
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_109"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_109";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_110
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_110"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_110";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_111
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_111"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_111";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_112
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_112"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_112";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_113
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_113"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_113";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_114
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_114"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_114";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_115
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_115"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_115";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_116
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_116"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_116";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_117
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_117"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_117";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_118
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_118"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_118";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_119
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_119"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_119";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_MAP_120
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			dvar				"ui_ingame_vote_map_name_120"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_MAP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				exec "vstr ui_ingame_vote_map_cmd_120";
+				close awe_changemap_61_120;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_PREVIOUS
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@AWE_PREVIOUS_60"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				close awe_changemap_61_120;
+				open awe_changemap_1_60;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+	}
+}

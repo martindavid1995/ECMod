@@ -1,0 +1,915 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_TITLE				        	48 64
+
+#define ORIGIN_BOLT				           		20 84
+#define ORIGIN_CHOICE_1		            		30 80
+#define ORIGIN_CHOICE_2		            		30 96
+#define ORIGIN_CHOICE_3		            		30 112
+
+#define ORIGIN_SNIPER			    			20 154
+#define ORIGIN_CHOICE_4			            	30 150
+#define ORIGIN_CHOICE_5			            	30 166
+#define ORIGIN_CHOICE_6			            	30 182
+#define ORIGIN_CHOICE_7 		            	30 198
+
+#define ORIGIN_WEAPONIMAGE				    	396 84
+#define ORIGIN_WEAPONTEXT				    	396 220
+#define ORIGIN_WEAPONPROPERTIESTEXT				396 290
+
+#define ORIGIN_WEAPONACCURACY					495 277
+#define ORIGIN_WEAPONDAMAGE				    	495 301
+#define ORIGIN_WEAPONMOBILITY					495 325
+
+#define TEXTSCALE_TYPE				0.35
+#define TEXTSCALE_WEAPON			0.3
+
+{
+	menuDef
+	{
+		name			"weapon_rifle"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			close weapon_rifle;
+		}
+		onOpen 
+		{
+			show weapon_propertiestext;
+			show weapon_propertiesbackground;
+		}
+		onClose
+		{
+			hide enfield_info;
+			hide nagant_info;
+			hide kar98k_info;
+			hide springfield_info;
+			hide enfieldsniper_info;
+			hide nagantsniper_info;
+			hide kar98ksniper_info;
+  		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			//rect			-107 0 554 480
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@AWE_SELECT_PRIMARY"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_BOLT
+			forecolor		1 1 1 1
+			text			"BOLT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_TYPE
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_SNIPER
+			forecolor		1 1 1 1
+			text			"SNIPER"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_TYPE
+			decoration
+		}
+
+
+// MENU CHOICES
+
+		//execKey "1" { play "mouse_click"; scriptMenuResponse "enfield_mp" }
+		//execKey "2" { play "mouse_click"; scriptMenuResponse "mosin_nagant_mp" }
+		//execKey "3" { play "mouse_click"; scriptMenuResponse "kar98k_mp" }
+		//execKey "4" { play "mouse_click"; scriptMenuResponse "springfield_mp" }
+		//execKey "5" { play "mouse_click"; scriptMenuResponse "enfield_scope_mp" }
+		//execKey "6" { play "mouse_click"; scriptMenuResponse "mosin_nagant_sniper_mp" }
+		//execKey "7" { play "mouse_click"; scriptMenuResponse "kar98k_sniper_mp" }
+
+
+		itemDef 
+		{
+			name			"button_enfield"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_1
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_LEEENFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_enfield"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "enfield_mp";
+			}
+			onFocus
+			{
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show enfield_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_enfield"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_1
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_LEEENFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_enfield"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show enfield_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_nagant"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_2
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_MOSINNAGANT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_nagant"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "mosin_nagant_mp";
+			}
+			onFocus
+			{
+				hide enfield_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show nagant_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_nagant"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_2
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_MOSINNAGANT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_nagant"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide enfield_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show nagant_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_kar98k"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_3
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_KAR98K"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_kar98k"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "kar98k_mp";
+			}
+			onFocus
+			{
+				hide enfield_info;
+				hide nagant_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show kar98k_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_kar98k"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_3
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_KAR98K"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_kar98k"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide enfield_info;
+				hide nagant_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show kar98k_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_springfield"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_4
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SPRINGFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_springfield"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "springfield_mp";
+			}
+			onFocus
+			{
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show springfield_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_springfield"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_4
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SPRINGFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_springfield"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show springfield_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_enfieldscoped"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_5
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_LEEENFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_enfieldsniper"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "enfield_scope_mp";
+			}
+			onFocus
+			{
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show enfieldsniper_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_enfieldscoped"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_5
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_LEEENFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_enfieldsniper"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show enfieldsniper_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_nagantsniper"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_6
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_MOSINNAGANT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_nagantsniper"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "mosin_nagant_sniper_mp";
+			}
+			onFocus
+			{
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show nagantsniper_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_nagantsniper"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_6
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_MOSINNAGANT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_nagantsniper"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide kar98ksniper_info;
+    				play "mouse_over";
+				show nagantsniper_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_kar98ksniper"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_7
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_KAR98K"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_kar98ksniper"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "kar98k_sniper_mp";
+			}
+			onFocus
+			{
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+    				play "mouse_over";
+				show kar98ksniper_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_kar98ksniper"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_7
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_KAR98K"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_kar98ksniper"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+    				play "mouse_over";
+				show kar98ksniper_info;
+			}
+		}
+
+		itemDef 
+		{
+			#include "ui_mp/button_mainmenu.menu"
+
+			action
+			{
+				play "mouse_click";
+				close ingame;
+				open main;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+// WEAPON IMAGES
+
+		itemDef
+		{
+			name			"enfield_info"
+			visible 		0
+			rect			0 -2 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_enfield"
+			decoration
+		}
+		itemDef
+		{
+			name			"nagant_info"
+			visible 		0
+			rect			0 0 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_nagant"
+			decoration
+		}
+		itemDef
+		{
+			name			"kar98k_info"
+			visible 		0
+			rect			0 -2 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_kar98"
+			decoration
+		}
+		itemDef
+		{
+			name			"springfield_info"
+			visible 		0
+			rect			0 4 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_springfield"
+			decoration
+		}
+		itemDef
+		{
+			name			"enfieldsniper_info"
+			visible 		0
+			rect			0 -6 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_enfieldscoped"
+			decoration
+		}
+		itemDef
+		{
+			name			"nagantsniper_info"
+			visible 		0
+			rect			0 0 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_nagantscoped"
+			decoration
+		}
+		itemDef
+		{
+			name			"kar98ksniper_info"
+			visible 		0
+			rect			0 -2 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_kar98scoped"
+			decoration
+		}
+
+// WEAPON PROPERTIES
+
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			visible 		0
+			origin			ORIGIN_WEAPONPROPERTIESTEXT
+			forecolor		1 1 1 1
+			autowrapped
+			text			"@MPUI_ACCURACY_DAMAGE_MOBILITY"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			decoration
+		}
+
+		itemDef
+		{
+			name			"weapon_propertiesbackground"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 .125
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"weapon_propertiesbackground"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 .125
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"weapon_propertiesbackground"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 .125
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"greasegun_info"
+			visible 		0
+			rect			0 0 70 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"enfield_info"
+			visible 		0
+			rect			0 0 108 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"enfield_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"enfield_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagant_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagant_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagant_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98k_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98k_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98k_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"springfield_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"springfield_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"springfield_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+		
+		itemDef
+		{
+			name			"enfieldsniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"enfieldsniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"enfieldsniper_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagantsniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagantsniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagantsniper_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98ksniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98ksniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98ksniper_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+	}
+}

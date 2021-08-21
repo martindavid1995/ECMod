@@ -1,0 +1,3786 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_TITLE					48 64
+
+#define ORIGIN_SMG						20 84
+#define ORIGIN_CHOICE_1				30 80
+#define ORIGIN_CHOICE_2				30 96
+#define ORIGIN_CHOICE_3				30 112
+#define ORIGIN_CHOICE_4				30 128
+#define ORIGIN_CHOICE_5				30 144
+
+#define ORIGIN_ASSAULT						20 186
+#define ORIGIN_CHOICE_6				30 182
+#define ORIGIN_CHOICE_7				30 198
+#define ORIGIN_CHOICE_8				30 214
+#define ORIGIN_CHOICE_9				30 230
+
+#define ORIGIN_SEMI						20 272
+#define ORIGIN_CHOICE_A				30 268
+#define ORIGIN_CHOICE_B				30 284
+#define ORIGIN_CHOICE_C				30 300
+#define ORIGIN_CHOICE_D				30 316
+
+#define ORIGIN_BOLT						20 358
+#define ORIGIN_CHOICE_E				30 354
+#define ORIGIN_CHOICE_F				30 370
+#define ORIGIN_CHOICE_G				30 386
+
+#define ORIGIN_SNIPER						200 84
+#define ORIGIN_CHOICE_H				210 80
+#define ORIGIN_CHOICE_I				210 96
+#define ORIGIN_CHOICE_J				210 112
+#define ORIGIN_CHOICE_K				210 128
+
+#define ORIGIN_SHOTGUN				200 186
+#define ORIGIN_CHOICE_L				210 182
+
+#define ORIGIN_PISTOL						200 224
+#define ORIGIN_CHOICE_M				210 220
+#define ORIGIN_CHOICE_N				210 236
+#define ORIGIN_CHOICE_O				210 252
+#define ORIGIN_CHOICE_P				210 268
+
+#define ORIGIN_WEAPONIMAGE					396 84
+#define ORIGIN_WEAPONTEXT					396 220
+#define ORIGIN_WEAPONPROPERTIESTEXT				396 290
+
+#define ORIGIN_WEAPONACCURACY					495 277
+#define ORIGIN_WEAPONDAMAGE					495 301
+#define ORIGIN_WEAPONMOBILITY					495 325
+
+#define TEXTSCALE_TYPE				0.35
+#define TEXTSCALE_WEAPON			0.3
+
+{
+	menuDef
+	{
+		name			"weapon_british"
+		rect			0 0 640 480
+		focuscolor		GLOBAL_FOCUSED_COLOR
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		onEsc 
+		{
+			close weapon_british;
+		}
+		onOpen 
+		{
+			show weapon_propertiestext;
+			show weapon_propertiesbackground;
+		}
+		onClose
+		{
+			hide greasegun_info;
+			hide sten_info;
+			hide thompson_info;
+			hide pps42_info;
+			hide mp40_info;
+			hide bar_info;
+			hide bren_info;
+			hide ppsh_info;
+			hide mp44_info;
+			hide m1garand_info;
+			hide svt40_info;
+			hide g43_info;
+			hide m1carbine_info;
+			hide enfield_info;
+			hide nagant_info;
+			hide kar98k_info;
+			hide springfield_info;
+			hide enfieldsniper_info;
+			hide nagantsniper_info;
+			hide kar98ksniper_info;
+ 			hide shotgun_info;
+			hide colt_info;
+			hide webley_info;
+			hide TT30_info;
+			hide luger_info;
+ 			hide faust_info;
+  		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			//rect			-107 0 554 480
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		#include "ui/bars.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@AWE_SELECT_PRIMARY"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_HEADER_SIZE
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_SMG
+			forecolor		1 1 1 1
+			text			"SMG"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_TYPE
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_ASSAULT
+			forecolor		1 1 1 1
+			text			"ASSAULT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_TYPE
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_BOLT
+			forecolor		1 1 1 1
+			text			"BOLT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_TYPE
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_SEMI
+			forecolor		1 1 1 1
+			text			"SEMI"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_TYPE
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_SNIPER
+			forecolor		1 1 1 1
+			text			"SNIPER"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_TYPE
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_SHOTGUN
+			forecolor		1 1 1 1
+			text			"SHOTGUN"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_TYPE
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_PISTOL
+			forecolor		1 1 1 1
+			text			"PISTOLS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_TYPE
+			decoration
+		}
+
+
+// MENU CHOICES
+
+		//execKey "1" { play "mouse_click"; scriptMenuResponse "greasegun_mp" }
+		//execKey "2" { play "mouse_click"; scriptMenuResponse "sten_mp" }
+		//execKey "3" { play "mouse_click"; scriptMenuResponse "thompson_mp" }
+		//execKey "4" { play "mouse_click"; scriptMenuResponse "pps42_mp" }
+		//execKey "5" { play "mouse_click"; scriptMenuResponse "mp40_mp" }
+		//execKey "6" { play "mouse_click"; scriptMenuResponse "bar_mp" }
+		//execKey "7" { play "mouse_click"; scriptMenuResponse "bren_mp" }
+		//execKey "8" { play "mouse_click"; scriptMenuResponse "ppsh_mp" }
+		//execKey "9" { play "mouse_click"; scriptMenuResponse "mp44_mp" }
+		//execKey "a" { play "mouse_click"; scriptMenuResponse "m1garand_mp" }
+		//execKey "b" { play "mouse_click"; scriptMenuResponse "svt40_mp" }
+	    //execKey "c" { play "mouse_click"; scriptMenuResponse "g43_mp" }
+		//execKey "d" { play "mouse_click"; scriptMenuResponse "m1carbine_mp" }
+		//execKey "e" { play "mouse_click"; scriptMenuResponse "enfield_mp" }
+		//execKey "f" { play "mouse_click"; scriptMenuResponse "mosin_nagant_mp" }
+		//execKey "g" { play "mouse_click"; scriptMenuResponse "kar98k_mp" }
+		//execKey "h" { play "mouse_click"; scriptMenuResponse "springfield_mp" }
+		//execKey "i" { play "mouse_click"; scriptMenuResponse "enfield_scope_mp" }
+		//execKey "j" { play "mouse_click"; scriptMenuResponse "mosin_nagant_sniper_mp" }
+		//execKey "k" { play "mouse_click"; scriptMenuResponse "kar98k_sniper_mp" }
+		//execKey "l" { play "mouse_click"; scriptMenuResponse "shotgun_mp" }
+		//execKey "m" { play "mouse_click"; scriptMenuResponse "colt_mp" }
+		//execKey "n" { play "mouse_click"; scriptMenuResponse "webley_mp" }
+		//execKey "o" { play "mouse_click"; scriptMenuResponse "TT30_mp" }
+		//execKey "p" { play "mouse_click"; scriptMenuResponse "luger_mp" }
+
+		itemDef 
+		{
+			name			"button_greasegun"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_1
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_GREASEGUN"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_greasegun"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "greasegun_mp";
+			}
+			onFocus
+			{
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show greasegun_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_greasegun"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_1
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_GREASEGUN"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_greasegun"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show greasegun_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_sten"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_2
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_STEN"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_sten"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "sten_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show sten_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_sten"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_2
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_STEN"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_sten"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show sten_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_thompson"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_3
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_THOMPSON"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_thompson"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "thompson_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show thompson_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_thompson"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_3
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_THOMPSON"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_thompson"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show thompson_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_pps42"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_4
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_PPS42"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_pps42"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "PPS42_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show pps42_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_pps42"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_4
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_PPS42"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_pps42"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show pps42_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_mp40"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_5
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_MP40"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_mp40"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "mp40_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show mp40_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_mp40"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_5
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_MP40"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_mp40"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show mp40_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_bar"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_6
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_BAR"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_bar"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "bar_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show bar_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_bar"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_6
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_BAR"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_bar"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show bar_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_bren"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_7
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_BREN_LMG"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_bren"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "bren_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show bren_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_bren"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_7
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_BREN_LMG"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_bren"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show bren_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_ppsh"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_8
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_PPSH"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_ppsh"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "ppsh_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show ppsh_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_ppsh"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_8
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_PPSH"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_ppsh"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show ppsh_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_mp44"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_9
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_MP44"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_mp44"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "mp44_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show mp44_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_mp44"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_9
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_MP44"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_mp44"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show mp44_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_m1garand"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_A
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_M1_GARAND"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_m1garand"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "m1garand_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show m1garand_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_m1garand"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_A
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_M1_GARAND"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_m1garand"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show m1garand_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_svt40"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_B
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_TOKAREV_SVT40"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_svt40"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "SVT40_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show svt40_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_svt40"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_B
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_TOKAREV_SVT40"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_svt40"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show svt40_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_g43"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_C
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_G43"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_g43"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "g43_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show g43_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_g43"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_C
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_G43"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_g43"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show g43_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_m1carbine"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_D
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_M1A1_CARBINE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_m1carbine"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "m1carbine_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show m1carbine_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_m1carbine"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_D
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_M1A1_CARBINE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_m1carbine"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show m1carbine_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_enfield"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_E
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_LEEENFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_enfield"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "enfield_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show enfield_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_enfield"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_E
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_LEEENFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_enfield"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show enfield_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_nagant"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_F
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_MOSINNAGANT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_nagant"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "mosin_nagant_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show nagant_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_nagant"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_F
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_MOSINNAGANT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_nagant"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show nagant_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_kar98k"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_G
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_KAR98K"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_kar98k"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "kar98k_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show kar98k_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_kar98k"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_G
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_KAR98K"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_kar98k"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show kar98k_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_springfield"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_H
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SPRINGFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_springfield"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "springfield_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show springfield_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_springfield"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_H
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SPRINGFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_springfield"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show springfield_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_enfieldscoped"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_I
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_LEEENFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_enfieldsniper"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "enfield_scope_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show enfieldsniper_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_enfieldscoped"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_I
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_LEEENFIELD"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_enfieldsniper"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show enfieldsniper_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_nagantsniper"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_J
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_MOSINNAGANT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_nagantsniper"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "mosin_nagant_sniper_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show nagantsniper_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_nagantsniper"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_J
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_MOSINNAGANT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_nagantsniper"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show nagantsniper_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_kar98ksniper"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_K
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_KAR98K"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_kar98ksniper"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "kar98k_sniper_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show kar98ksniper_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_kar98ksniper"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_K
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SCOPED_KAR98K"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_kar98ksniper"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show kar98ksniper_info;
+			}
+		}
+
+		
+
+		itemDef 
+		{
+			name			"button_shotgun"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_L
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SHOTGUN"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_shotgun"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "shotgun_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show shotgun_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_shotgun"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_L
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_SHOTGUN"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_shotgun"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show shotgun_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_colt"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_M
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@WEAPON_COLT45"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_colt"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "colt_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show colt_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_colt"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_M
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@WEAPON_COLT45"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_colt"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide webley_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show colt_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_webley"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_N
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@WEAPON_WEBLEY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_webley"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "webley_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show webley_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_webley"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_N
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@WEAPON_WEBLEY"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_webley"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide TT30_info;
+				hide luger_info;
+    				play "mouse_over";
+				show webley_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_TT30"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_O
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@WEAPON_TT30"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_TT30"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "TT30_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide luger_info;
+    				play "mouse_over";
+				show TT30_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_TT30"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_O
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@WEAPON_TT30"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_TT30"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide luger_info;
+    				play "mouse_over";
+				show TT30_info;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_luger"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_P
+			forecolor		GLOBAL_UNFOCUSED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@WEAPON_LUGER"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_luger"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "luger_mp";
+			}
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+    				play "mouse_over";
+				show luger_info;
+			}
+		}
+		itemDef 
+		{
+			name			"button_luger"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE_P
+			forecolor		GLOBAL_DISABLED_COLOR
+			type			ITEM_TYPE_BUTTON
+			text			"@WEAPON_LUGER"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSCALE_WEAPON
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textaligny		20
+			dvartest		"ui_allow_luger"
+			showDvar		{ "2" }
+			onFocus
+			{
+				hide greasegun_info;
+				hide sten_info;
+				hide thompson_info;
+				hide pps42_info;
+				hide mp40_info;
+				hide bar_info;
+				hide bren_info;
+				hide ppsh_info;
+				hide mp44_info;
+				hide m1garand_info;
+				hide svt40_info;
+				hide g43_info;
+				hide m1carbine_info;
+				hide enfield_info;
+				hide nagant_info;
+				hide kar98k_info;
+				hide springfield_info;
+				hide enfieldsniper_info;
+				hide nagantsniper_info;
+				hide kar98ksniper_info;
+ 				hide shotgun_info;
+				hide colt_info;
+				hide webley_info;
+				hide TT30_info;
+    				play "mouse_over";
+				show luger_info;
+			}
+		}
+
+		itemDef 
+		{
+			#include "ui_mp/button_mainmenu.menu"
+
+			action
+			{
+				play "mouse_click";
+				close ingame;
+				open main;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+// WEAPON IMAGES
+
+		itemDef
+		{
+			name			"greasegun_info"
+			visible 		0
+			rect			0 6 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_greasegun"
+			decoration
+		}
+		itemDef
+		{
+			name			"sten_info"
+			visible 		0
+			rect			0 0 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_sten"
+			decoration
+		}
+		itemDef
+		{
+			name			"thompson_info"
+			visible 		0
+			rect			0 6 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_thompson"
+			decoration
+		}
+		itemDef
+		{
+			name			"pps42_info"
+			visible 		0
+			rect			0 6 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_pps42"
+			decoration
+		}
+		itemDef
+		{
+			name			"mp40_info"
+			visible 		0
+			rect			0 20 199 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_mp40"
+			decoration
+		}
+		itemDef
+		{
+			name			"bar_info"
+			visible 		0
+			rect			0 -2 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_bar"
+			decoration
+		}
+		itemDef
+		{
+			name			"bren_info"
+			visible 		0
+			rect			0 -16 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_bren"
+			decoration
+		}
+		itemDef
+		{
+			name			"ppsh_info"
+			visible 		0
+			rect			0 10 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_ppsh"
+			decoration
+		}
+		itemDef
+		{
+			name			"mp44_info"
+			visible 		0
+			rect			0 8 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_mp44"
+			decoration
+		}
+		itemDef
+		{
+			name			"m1garand_info"
+			visible 		0
+			rect			0 0 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_m1garand"
+			decoration
+		}
+		itemDef
+		{
+			name			"svt40_info"
+			visible 		0
+			rect			0 0 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_svt40"
+			decoration
+		}
+		itemDef
+		{
+			name			"g43_info"
+			visible 		0
+			rect			0 -4 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_g43"
+			decoration
+		}
+		itemDef
+		{
+			name			"m1carbine_info"
+			visible 		0
+			rect			0 0 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_m1carbine"
+			decoration
+		}
+		itemDef
+		{
+			name			"enfield_info"
+			visible 		0
+			rect			0 -2 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_enfield"
+			decoration
+		}
+		itemDef
+		{
+			name			"nagant_info"
+			visible 		0
+			rect			0 0 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_nagant"
+			decoration
+		}
+		itemDef
+		{
+			name			"kar98k_info"
+			visible 		0
+			rect			0 -2 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_kar98"
+			decoration
+		}
+		itemDef
+		{
+			name			"springfield_info"
+			visible 		0
+			rect			0 4 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_springfield"
+			decoration
+		}
+		itemDef
+		{
+			name			"enfieldsniper_info"
+			visible 		0
+			rect			0 -6 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_enfieldscoped"
+			decoration
+		}
+		itemDef
+		{
+			name			"nagantsniper_info"
+			visible 		0
+			rect			0 0 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_nagantscoped"
+			decoration
+		}
+		itemDef
+		{
+			name			"kar98ksniper_info"
+			visible 		0
+			rect			0 -2 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_kar98scoped"
+			decoration
+		}
+		itemDef
+		{
+			name			"shotgun_info"
+			visible 		0
+			rect			0 0 224 112
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_shotgun"
+			decoration
+		}
+		itemDef
+		{
+			name			"colt_info"
+			visible 		0
+			rect			42 21 168 84
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_colt"
+			decoration
+		}
+		itemDef
+		{
+			name			"webley_info"
+			visible 		0
+			rect			42 21 168 84
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_webley"
+			decoration
+		}
+		itemDef
+		{
+			name			"TT30_info"
+			visible 		0
+			rect			42 21 168 84
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_tt30"
+			decoration
+		}
+		itemDef
+		{
+			name			"luger_info"
+			visible 		0
+			rect			42 21 168 84
+			origin			ORIGIN_WEAPONIMAGE
+	 		style			WINDOW_STYLE_SHADER
+			background		"weapon_luger"
+			decoration
+		}
+
+// WEAPON PROPERTIES
+
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			visible 		0
+			origin			ORIGIN_WEAPONPROPERTIESTEXT
+			forecolor		1 1 1 1
+			autowrapped
+			text			"@MPUI_ACCURACY_DAMAGE_MOBILITY"
+			textfont		UI_FONT_NORMAL
+			textscale		GLOBAL_TEXT_SIZE
+			decoration
+		}
+
+		itemDef
+		{
+			name			"weapon_propertiesbackground"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 .125
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"weapon_propertiesbackground"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 .125
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"weapon_propertiesbackground"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 .125
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"greasegun_info"
+			visible 		0
+			rect			0 0 70 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"greasegun_info"
+			visible 		0
+			rect			0 0 75 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"greasegun_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"sten_info"
+			visible 		0
+			rect			0 0 70 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"sten_info"
+			visible 		0
+			rect			0 0 77 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"sten_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"thompson_info"
+			visible 		0
+			rect			0 0 56 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"thompson_info"
+			visible 		0
+			rect			0 0 83 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"thompson_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"pps42_info"
+			visible 		0
+			rect			0 0 56 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"pps42_info"
+			visible 		0
+			rect			0 0 83 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"pps42_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"mp40_info"
+			visible 		0
+			rect			0 0 70 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"mp40_info"
+			visible 		0
+			rect			0 0 75 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"mp40_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"bar_info"
+			visible 		0
+			rect			0 0 72 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"bar_info"
+			visible 		0
+			rect			0 0 120 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"bar_info"
+			visible 		0
+			rect			0 0 64 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"bren_info"
+			visible 		0
+			rect			0 0 72 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"bren_info"
+			visible 		0
+			rect			0 0 120 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"bren_info"
+			visible 		0
+			rect			0 0 64 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"ppsh_info"
+			visible 		0
+			rect			0 0 45 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"ppsh_info"
+			visible 		0
+			rect			0 0 93 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"ppsh_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"mp44_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"mp44_info"
+			visible 		0
+			rect			0 0 105 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"mp44_info"
+			visible 		0
+			rect			0 0 64 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"m1garand_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"m1garand_info"
+			visible 		0
+			rect			0 0 110 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"m1garand_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"svt40_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"svt40_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"svt40_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"g43_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"g43_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"g43_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"m1carbine_info"
+			visible 		0
+			rect			0 0 96 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"m1carbine_info"
+			visible 		0
+			rect			0 0 64 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"m1carbine_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"enfield_info"
+			visible 		0
+			rect			0 0 108 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"enfield_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"enfield_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagant_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagant_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagant_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98k_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98k_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98k_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"springfield_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"springfield_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"springfield_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+		
+		itemDef
+		{
+			name			"enfieldsniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"enfieldsniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"enfieldsniper_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagantsniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagantsniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"nagantsniper_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98ksniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98ksniper_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"kar98ksniper_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+
+
+		itemDef
+		{
+			name			"shotgun_info"
+			visible 		0
+			rect			0 0 35 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"shotgun_info"
+			visible 		0
+			rect			0 0 100 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"shotgun_info"
+			visible 		0
+			rect			0 0 80 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"colt_info"
+			visible 		0
+			rect			0 0 35 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"colt_info"
+			visible 		0
+			rect			0 0 100 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"colt_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"webley_info"
+			visible 		0
+			rect			0 0 35 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"webley_info"
+			visible 		0
+			rect			0 0 100 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"webley_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"TT30_info"
+			visible 		0
+			rect			0 0 35 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"TT30_info"
+			visible 		0
+			rect			0 0 100 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"TT30_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"luger_info"
+			visible 		0
+			rect			0 0 35 10
+			origin			ORIGIN_WEAPONACCURACY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"luger_info"
+			visible 		0
+			rect			0 0 100 10
+			origin			ORIGIN_WEAPONDAMAGE
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+
+		itemDef
+		{
+			name			"luger_info"
+			visible 		0
+			rect			0 0 128 10
+			origin			ORIGIN_WEAPONMOBILITY
+			backcolor		1 1 1 1
+	 		style			WINDOW_STYLE_FILLED
+			decoration
+		}
+	}
+}
