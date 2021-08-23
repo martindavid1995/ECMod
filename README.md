@@ -56,6 +56,9 @@ This was the first goal that we set to accomplish with the ECMod, and all other 
  how the game works very difficult. On top of this, if you ever wanted to find out how a certain game feature was coded for reference, you had thousands of source files to search through.
  - The game is simply, old - and the people who worked on it are no longer around. It was difficult to find any resources to ease the modding process. We were oftentimes stuck on
  simple problems for days, forced to spend many hours painstakingly making tiny changes and testing until we could find a solution. 
+ 
+## Try it out on our server
+`/connect 162.248.88.202:28960`
 
 ## Special Thanks
  - `-=EC=-Nitemare` for spending countless hours with me developing new menus, testing, researching, brainstorming ideas, and fixing bugs.
