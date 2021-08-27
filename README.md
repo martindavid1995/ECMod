@@ -59,7 +59,7 @@ This was the first goal that we set to accomplish with the ECMod, and all other 
 ## Try it out on our server
 -=EC=- All Weapons : `/connect 162.248.88.202:28960`
 
-## Want to play?
+## Want to play with us?
 Join our [discord](https://discord.gg/jxXwQRfNSn) server!
 
 ## Special Thanks
