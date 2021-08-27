@@ -48,22 +48,21 @@ This was the first goal that we set to accomplish with the ECMod, and all other 
       - Displaying winner/loser at game end
       
 ## Challenges
- - Due to the game coming out in 2005 and most modders stopping working on the game by the early 2010s, there is a severe lack of documentation and modding resources for CoD2. 
- This called for countless hours of trial-and-error testing, where we would change one line of source code at a time, uploading it to the server, and seeing if did anything. It took dozens of hours to become 
- even moderately comfortable making changes to the game's source code.
+ - Due to the game coming out in 2005 and most modders stopping working on the game by the early 2010s, there is a severe lack of documentation and modding resources for CoD2. All knowledge about the game engine works and how the game's folder hierarchy was structured needed to be self taught through trial-and-error testing and studying source code/developer comments. While the game is coded in C++, there are no imported libraries, and you can't see source code for any of the engine functions. It took dozens of hours to become even moderately comfortable making changes to the game.
  - CoD2 runs on a modified version of the id Tech 3 engine which is refered to as the IW2.0 engine. This amount of work that this engine handles is laughably small compared to modern game engines. 
  This archaic version of the IW engine basically only handles player movement, bullet trajectories, and hit detection. Because of this, the game has an absurdly large amount of source code which made understanding
- how the game works very difficult. On top of this, if you ever wanted to find out how a certain game feature was coded for reference, you had thousands of source files to search through. Fun Fact: Every Call of Duty title ever released runs on a version of the same IW Engine that has been used since CoD2 in 2005. Instead of building a new engine, they have just been adding functionality to the existing IW engine for 15+ years in order to handle their modern titles. 
- - There is no debugger, no IDE, and no access to any form of a compiler for error-catching. If you make one mistake, everything is broken. Getting ahead of yourself and changing too many things at once before testing usually was followed by numerous hours rewinding your changes to find that pesky `;` that you omitted.  
- - The game is simply, old - and the people who worked on it are no longer around. It was difficult to find any resources to ease the modding process. We were oftentimes stuck on
- simple problems for days, if not weeks - forced to spend many hours painstakingly making tiny changes and testing until we could find a solution. 
+ how the game works very difficult. On top of this, if you ever wanted to find out how a certain game feature was coded for reference, you had thousands of source files to search through. 
+ --Fun Fact: Every Call of Duty title ever released runs on a version of the same IW Engine that has been used since CoD2 in 2005. Instead of building a new engine, they have just been adding functionality to the existing IW engine for 15+ years in order to handle their modern titles. 
+ - There is no debugger, no handy IDE that catches your mistakes, no access to a compiler, and no access to any engine code. If you make one mistake, everything is broken. Getting too confident and changing too many things at once before testing usually was followed by numerous hours rewinding your changes to find that pesky `;` that you omitted.  
+ - The build process is horribly slow and tedious. First you make a change in code, then you must then re-zip the mod package, upload it to the server, restart the server, join the server, login to remote-console, and then finally restart the map in order to see what your changes did. 
+ - The game is simply, old - and the people who worked on it are impossible to get in touch with. It was difficult to find any resources to ease the modding process. We were oftentimes stuck on simple problems for days, if not weeks - forced to spend many hours painstakingly making tiny changes and testing until we could find a solution. 
  
 ## Try it out on our server
-`/connect 162.248.88.202:28960`
+-=EC=- All Weapons : `/connect 162.248.88.202:28960`
 
 ## Special Thanks
  - `-=EC=-Nitemare` for spending countless hours with me developing new menus, testing, researching, brainstorming ideas, and fixing bugs.
  - `-=EC=-Artorias` and `-=EC=-Gimp` for their help testing and coming up with ideas for new features and changes.
- - `BeerGolem` for his help and support in testing, as well as providing crucial information and suggestions in the early days of the project. 
+ - `BeerGolem` for his help and support in testing, as well as providing critical information and suggestions in the early days of the project. 
  - Other members of the CoD2 community for their help testing, playing, and support throughout the development of the project. 
  - The `Easy Company Gaming` community for all of the good times. 
