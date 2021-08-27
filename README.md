@@ -59,6 +59,9 @@ This was the first goal that we set to accomplish with the ECMod, and all other 
 ## Try it out on our server
 -=EC=- All Weapons : `/connect 162.248.88.202:28960`
 
+## Want to play?
+Join our [discord](https://discord.gg/jxXwQRfNSn) server!
+
 ## Special Thanks
  - `-=EC=-Nitemare` for spending countless hours with me developing new menus, testing, researching, brainstorming ideas, and fixing bugs.
  - `-=EC=-Artorias` and `-=EC=-Gimp` for their help testing and coming up with ideas for new features and changes.
