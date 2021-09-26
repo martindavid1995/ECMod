@@ -1,6 +1,6 @@
 # Easy Company Call of Duty 2 Mod
 ## Purpose
-ECMod was created to bring back and refresh the pure Call of Duty 2 Multiplayer experience that so many people fell in love with in the late 2000s. CoD2 has a history of being very mod-friendly, 
+ECMod was created to bring back and refresh the pure Call of Duty 2 Multiplayer experience that so many people fell in love with in the late 2000s. CoD2 has a history of being very modder-friendly, 
 and over the years many sophisticated game-changing mods increased in popularity - bringing the game further away from it's pure vanilla experience. Nowadays, the only popular servers
 that still exist run extremely overworked modpacks which make the game play nothing like the CoD2 that so many of us remember and love. 
 
