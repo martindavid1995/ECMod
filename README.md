@@ -66,5 +66,5 @@ Join our [discord](https://discord.gg/jxXwQRfNSn) server!
  - `-=EC=-Nitemare` for spending countless hours with me developing new menus, testing, researching, brainstorming ideas, and fixing bugs.
  - `-=EC=-Artorias` and `-=EC=-Gimp` for their help testing and coming up with ideas for new features and changes.
  - `BeerGolem` for his help and support in testing, as well as providing critical information and suggestions in the early days of the project. 
- - Other members of the CoD2 community for their help testing, playing, and support throughout the development of the project. 
+ - Other members of the CoD2 community for their help testing, suggestions, and support throughout the development of the project. 
  - The `Easy Company Gaming` community for all of the good times. 
