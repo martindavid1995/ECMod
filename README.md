@@ -33,7 +33,7 @@ This was the first goal that we set to accomplish with the ECMod, and all other 
     - MG overheat timers
     - Map vote system
   ### Custom
-    - Overhaul of gamemode timings in to account for increased `sv_fps`
+    - Overhaul of gamemode timings to account for increased `sv_fps`
     - Weapon balancing (Shotgun nerf, BAR/Bren buff)
     - Custom all-weapons menus
     - Custom rifles-only menus, and the ability to designate maps as rifles-only from the server config
