@@ -57,7 +57,7 @@ This was the first goal that we set to accomplish with the ECMod, and all other 
  - The game is simply, old - and the people who worked on it are impossible to get in touch with. It was difficult to find any resources to ease the modding process. We were oftentimes stuck on simple problems for days, if not weeks - forced to spend many hours painstakingly making tiny changes and testing until we could find a solution or a work-around. 
  
 ## Try it out on our server
--=EC=- All Weapons : `/connect 162.248.88.202:28960`
+-=EC=- All Weapons : `/connect 192.223.26.44:28960`
 
 ## Want to play with us?
 Join our [discord](https://discord.gg/jxXwQRfNSn) server!
